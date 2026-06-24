@@ -2,6 +2,7 @@ import Home from "./pages/Home.jsx";
 import Meetings from "./pages/Meetings.jsx";
 import Header from "./components/Header.jsx";
 import Events from "./pages/Events.jsx";
+import Contact from "./pages/Contact.jsx";
 
 
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home language={language} />} />
         <Route path="/meetings" element={<Meetings language={language} />} />
         <Route path="/events" element={<Events language={language} />} />
+        <Route path="/contact" element={<Contact language={language} />} />
       </Routes>       
     </div>
   )

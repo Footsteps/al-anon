@@ -66,6 +66,12 @@ body {
   opacity: 0.6;
 }
 
+.app-container.contact::before {
+  background-image: url("./assets/Blumenwiese2.jpg");
+  opacity: 0.5;
+}
+
+
 
 /**BORDER **/
 .border {

@@ -1,8 +1,18 @@
+///////////////////////////////
+
+Form: Nächster Schritt
+Wenn du die Seite auf Vercel oder Netlify deployt hast, können wir das Formular so erweitern, dass:
+- die Daten direkt per E-Mail bei dir ankommen,
+- Flyer als Anhang mitgeschickt werden,
+- Spam-Schutz (Captcha/Honeypot) eingebaut wird,
+- du keinen eigenen Server betreiben musst
+
+//////////////////////////////
 Tooltip auf Handy testen wenn live
-
+//////////////////////////////
 Footer -> Fotos 
-
-Fotos: 
+//////////////////////////////
+Fotos: Quellen
 
 Hintergrund Meetings:
 laterne (Meetings)
@@ -28,7 +38,8 @@ Bild von <a href="https://pixabay.com/de/users/wal_172619-12138562/?utm_source=l
 Eibsee
 Bild von <a href="https://pixabay.com/de/users/fossane-202471/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4908017">Tim Mrzyglod</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4908017">Pixabay</a>
 
+/////////////////////////////////
 
 
 
-
+https://codepen.io/vineethtrv/pen/NxqKoY
