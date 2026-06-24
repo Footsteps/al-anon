@@ -1,0 +1,322 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /*10px as default size. browser is 16px --> then, 1rem is 10px*/
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--body-font);
+  height: 100vh;
+  width: 100%;
+}
+
+/*** COLORS ***/
+:root {
+  --primary-color: #41403e;
+  --text-background-color: rgba(255, 255, 255, 0.8);
+  --button-background-color: #fff;
+}
+
+/*** FONTS ***/
+:root {
+  --heading-font: Anton, sans-serif;
+  --heading-2-font: Baskervville, sans-serif;
+  --body-font: Raleway, sans-serif;
+  --button-font: Raleway, sans-serif;
+}
+
+/*** OVERLAY ***/
+.app-container {
+  position: relative;
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.app-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -1;
+}
+.app-container.home::before {
+  background-image: url("./assets/background.jpg");
+  opacity: 0.5;
+}
+
+.app-container.meetings::before {
+  background-image: url("./assets/background-meetings.jpg");
+  opacity: 0.6;
+}
+
+.app-container.events::before {
+  background-image: url("./assets/Eibsee.jpg");
+  opacity: 0.6;
+}
+
+
+/**BORDER **/
+.border {
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+}
+
+.wave-border {
+ box-shadow: 0 4px 12px rgba(76, 86, 106, 0.2);
+}
+
+
+
+/*** BUTTONS ***/
+
+button, .link {
+
+  transition: all 235ms ease-in-out;
+
+  background-color: var(--button-background-color);
+
+  color: var(--primary-color);
+
+  font-family: var(--button-font);
+  font-size: 1.3rem;
+  text-decoration: none;
+
+  outline: none;
+  cursor: pointer;
+
+  padding: 0.5rem;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: var(--button-background-color);
+}
+
+button:focus {
+  background-color: var(--primary-color);
+  color: var(--button-background-color);
+}
+
+.link:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+button:focus, .link:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+}
+
+
+/***HEADINGS & PARAGRAPHS**/
+h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+p {
+  color: var(--primary-color);
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/*** HEADER ***/
+header {
+  padding: 1em;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+h1 {
+  font-family: var(--heading-font);
+  padding: 0 1rem;
+  color: var(--primary-color);
+  text-align: center;
+  letter-spacing: 1.5px;
+  margin: 0 0 15px 0;
+}
+
+.link {
+  width: 6.5em;
+  font-size: 1.2rem;
+  padding: 0.8em;
+}
+
+.link.active {
+  background-color: var(--primary-color);
+  color: var(--button-background-color);
+}
+
+.round-btn {
+  height: 32px;
+  width: 32px;
+  border-radius: 100%;
+  background-color: var(--button-background-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 18px;
+  height: 18px; 
+}
+
+/*** NAVBAR ***/
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/**TOOLTIP***/
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+ 
+.tooltip {
+  position: absolute;
+  top: 120%;
+  bottom: auto;
+  left: 0;
+  transform: none;
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  z-index: 1000;
+}
+
+/**SECTIONS**/
+.section-card {
+  background-color: var(--text-background-color);
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+section p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: justify;
+}
+
+/**CARD**/
+.card {
+  width: 300px;
+  min-height: 100px;
+  padding: 2.25rem;
+  border-radius: 1.5rem;
+  background-color: hsl(260 25% 95% / 45%);
+  font-weight: bolder;
+}
+
+.card-glass {
+  font-size: 125%;
+  box-shadow: 
+    inset 0 0 0.05rem hsl(260 75% 40% / 20%),
+    inset 0 0 0.2rem 0.1rem hsl(260 75% 40% / 15%),
+    inset 0 0 0.3rem 0.2rem hsl(260 75% 40% / 10%);
+  backdrop-filter: blur(2rem);
+}
+
+.card h4 {
+  text-align: center;
+  margin: 0 0 1rem 0;
+  font-size: 15px;
+}
+
+
+/*** HOME ***/
+h2 {
+  font-size: 2rem;
+}
+
+/*** MEETINGS ***/
+.meetings-container {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.h-white-background {
+  background-color: var(--text-background-color);
+  padding: 3.5px;
+  font-weight: 1000;
+  letter-spacing: 1.5px;
+}
+
+/**EVENTS **/
+.events > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}  
+
+.events-container {
+  width: 100%;
+}  
+
+article.event {
+  padding: 1.5rem;
+  position: relative;  
+}
+
+article.event h3 {
+  padding: 0.7rem 0;
+  font-family: var(--heading-2-font);
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-align: center;
+  
+}
+
+.flyer-preview > a {
+ font-size: 1.3rem;
+}
+
+@media (min-width: 481px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 769px) {
+}
+@media (min-width: 1025px) {
+}
