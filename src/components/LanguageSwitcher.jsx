@@ -1,30 +1,39 @@
 import Tooltip from "./Tooltip.jsx";
+import {useEffect, useState} from "react";
 
-function LanguageSwitcher({ language, setLanguage }) {
+function LanguageSwitcher({ language, setLanguage, isMobile }) {
+  
+
   return (
-    <div aria-label="Language switcher" className="lang">
+    <div aria-label="Language switcher">
       {language === "en" ? (
         <Tooltip text="Sprache wechseln: deutsch">
           <button
             type="button"
-            className="round-btn border"
-            onClick={() => setLanguage("de")}
+            className={`border ${isMobile ? "round-btn" : ""}`}
+            onClick={(e) => {
+              setLanguage("de");
+              e.currentTarget.blur();
+            }}
             lang="de"
             aria-pressed={language === "de"}
           >
-            DE
+            {isMobile ? "DE" : "Sprache wechseln"}
           </button>
         </Tooltip>
       ) : (
         <Tooltip text="Switch language: english">
           <button
             type="button"
-            className="round-btn"
-            onClick={() => setLanguage("en")}
+            className={`border ${isMobile ? "round-btn" : ""}`}
+            onClick={(e) => {
+              setLanguage("en");
+              e.currentTarget.blur();
+            }}
             lang="en"
             aria-pressed={language === "en"}
           >
-            EN
+            {isMobile ? "EN" : "Switch Language"}
           </button>
         </Tooltip>
       )}
