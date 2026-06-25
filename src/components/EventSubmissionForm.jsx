@@ -9,23 +9,30 @@ export default function EventSubmissionForm({ language }) {
 
     const formData = new FormData(e.target);
 
-    console.log(Object.fromEntries(formData));
+    for (const [key, value] of formData.entries()) {
+      console.log(key, value);
+    }
+
     setSubmitted(true);
+    setFileName("");
+
     e.target.reset();
   }
 
   if (submitted) {
     return (
-      <p>
-        {language === "de"
-          ? "Vielen Dank für Deine Nachricht!"
-          : "Thank you for your message!"}
-      </p>
+      <section className="submit-section">
+        <p className="section-card">
+          {language === "de"
+            ? "Vielen Dank für Deine Nachricht!"
+            : "Thank you for your message!"}
+        </p>
+      </section>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} encType="multipart/formData">
+    <form onSubmit={handleSubmit} encType="multipart/form-data">
       <h2 className="section-card">
         {language === "de"
           ? "Hier ist Platz für Nachrichten oder Infos über Roundups :)"
@@ -33,11 +40,11 @@ export default function EventSubmissionForm({ language }) {
       </h2>
       <div className="form-group">
         {/* NACHRICHT */}
-
-        <label className="sr-only">
+        <label className="sr-only" htmlFor="message">
           {language === "de" ? "Deine Nachricht" : "Your Message"}
         </label>
         <textarea
+          id="message"
           name="message"
           rows="8"
           placeholder={language === "de" ? "Deine Nachricht" : "Your Message"}
@@ -65,6 +72,7 @@ export default function EventSubmissionForm({ language }) {
             <input type="date" name="endDate" id="endDate" />
           </div>
         </div>
+
         {/* ORT */}
         <label htmlFor="city">{language === "de" ? "Ort" : "City"}</label>
         <input type="text" name="city" id="city" />
@@ -76,8 +84,8 @@ export default function EventSubmissionForm({ language }) {
         <input type="text" name="address" id="address" />
 
         <div className="grid-2-container">
+          {/* ORGANIZER */}
           <div>
-            {/* ORGANIZER */}
             <label htmlFor="organizer">
               {language === "de"
                 ? "Welches Programm organisiert?"
@@ -121,7 +129,7 @@ export default function EventSubmissionForm({ language }) {
 
         {/* WEBSITE */}
         <label htmlFor="website">
-          {language === "de" ? "Webseite" : "Website"}
+          {language === "de" ? "Webseite (optional)" : "Website (optional)"}
         </label>
         <input type="url" name="website" id="website" />
       </div>
@@ -142,7 +150,13 @@ export default function EventSubmissionForm({ language }) {
             />
           </label>
 
-          <p>{fileName ? "Keine Datei beigefügt" : "No file uploaded"}</p>
+          <p>
+            {fileName
+              ? fileName
+              : language === "de"
+                ? "Keine Datei beigefügt"
+                : "No file uploaded"}
+          </p>
         </div>
 
         {/* KONSENT */}

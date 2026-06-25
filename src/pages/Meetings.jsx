@@ -1,7 +1,7 @@
 export default function Meetings({language}) {
     return(
         <main>
-            <section id="meetings">
+            <section id="meetings" className="section-card">
                 <h2>{language === "de" ? "Englischsprachige Al-Anon Meetings Berlin" : "English speaking Al-Anon meetings Berlin"}</h2>
                 <p>
                     {language === "de"

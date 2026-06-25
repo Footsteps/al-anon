@@ -65,10 +65,24 @@
         "address": "Schwanberg 3, 97348 Rödelsee",
         "website": null,
         "email": "schwanberg.treffen@gmail.com",
-        "flyer": {"de": "../../public/flyer/2026_internationales_Al-Anon-Treffen_Schwanberg.pdf", "en": "../../public/flyer/2026_International_Al-Anon_Roundup_Germany.pdf", "en": "../../public/flyer/2026_International_Al-Anon_Roundup_Germany.pdf"}
+        "flyer": {"de": "../../public/flyer/2026_internationales_Al-Anon-Treffen_Schwanberg.pdf", "en": "../../public/flyer/2026_International_Al-Anon_Roundup_Germany.pdf"}
+      },
+        {
+        "id": 3,
+        "title": "2. DACHYPAA",
+        "startDate": "2026-08-14",
+        "endDate": "2026-08-16",
+        "organizer": "AA",
+        "languages": {"de":"deutsch", "en":"german"},
+        "city": "Bad Homburg (Jugendherberge)",
+        "country": {"de": "Deutschland", "en":"Germany"},
+        "address": "Mühlenweg 17, 61348 Bad Homburg",
+        "website": "https://www.dachypaa.org/",
+        "email": null,
+        "flyer": {"de": "../../public/flyer/DACHYPAA_2026_FLYER a5.pdf"}
       },
       {
-        "id": 3,
+        "id": 4,
         "title": "International AA Berlin Convention",
         "startDate": "2026-08-28",
         "endDate": "2026-08-30",

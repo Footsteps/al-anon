@@ -226,7 +226,7 @@ nav {
   z-index: 1000;
 }
 
-/**SECTIONS**/
+/**SECTION CARD**/
 .section-card {
   background-color: var(--text-background-color);
   margin: 2rem;
@@ -241,13 +241,14 @@ section p {
   text-align: justify;
 }
 
-/**CARD**/
+/**GLASS CARD**/
+
 .card {
   width: 300px;
   min-height: 100px;
   padding: 2.25rem;
   border-radius: 1.5rem;
-  background-color: hsl(260 25% 95% / 45%);
+  background-color: rgb(255, 255, 240);
   font-weight: bolder;
 }
 
@@ -325,4 +326,5 @@ article.event h3 {
 @media (min-width: 769px) {
 }
 @media (min-width: 1025px) {
+  
 }
