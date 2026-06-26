@@ -20,7 +20,7 @@ body {
 /*** COLORS ***/
 :root {
   --primary-color: #41403e;
-  --text-background-color: rgba(255, 255, 255, 0.8);
+  --text-background-color: rgba(255, 255, 255, 0.82);
   --button-background-color: #fff;
 }
 
@@ -71,8 +71,6 @@ body {
   opacity: 0.5;
 }
 
-
-
 /**BORDER **/
 .border {
   border-style: solid;
@@ -86,9 +84,8 @@ body {
 }
 
 .wave-border {
- box-shadow: 0 4px 12px rgba(76, 86, 106, 0.2);
+  box-shadow: 0 4px 12px rgba(76, 86, 106, 0.2);
 }
-
 
 /***HEADINGS & PARAGRAPHS**/
 h2 {
@@ -116,8 +113,8 @@ nav {
   justify-content: space-around;
 }
 
-button, .nav-link {
-
+button,
+.nav-link {
   transition: all 235ms ease-in-out;
 
   background-color: var(--button-background-color);
@@ -154,7 +151,6 @@ button, .nav-link {
   color: var(--button-background-color);
 }
 
-
 button:hover {
   background-color: var(--primary-color);
   color: var(--button-background-color);
@@ -171,11 +167,10 @@ button:focus {
   transform: translate3d(0, 2px, 0);
 }
 
-button:focus, .nav-link:focus {
+button:focus,
+.nav-link:focus {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
-
-
 
 .round-btn {
   height: 32px;
@@ -191,7 +186,7 @@ button:focus, .nav-link:focus {
 
 .icon {
   width: 18px;
-  height: 18px; 
+  height: 18px;
 }
 
 /**TOOLTIP***/
@@ -200,7 +195,7 @@ button:focus, .nav-link:focus {
   position: relative;
   display: inline-block;
 }
- 
+
 .tooltip {
   position: absolute;
   top: 120%;
@@ -231,6 +226,7 @@ section p {
   text-align: justify;
 }
 
+
 /**GLASS CARD**/
 
 .card {
@@ -238,13 +234,13 @@ section p {
   min-height: 100px;
   padding: 2.25rem;
   border-radius: 1.5rem;
-  background-color: rgb(255, 255, 240);
+  background-color: var(--text-background-color);
   font-weight: bolder;
 }
 
 .card-glass {
   font-size: 125%;
-  box-shadow: 
+  box-shadow:
     inset 0 0 0.05rem hsl(260 75% 40% / 20%),
     inset 0 0 0.2rem 0.1rem hsl(260 75% 40% / 15%),
     inset 0 0 0.3rem 0.2rem hsl(260 75% 40% / 10%);
@@ -256,7 +252,6 @@ section p {
   margin: 0 0 1rem 0;
   font-size: 15px;
 }
-
 
 /*** HOME ***/
 h1 {
@@ -271,6 +266,12 @@ h1 {
 h2 {
   font-size: 2rem;
 }
+
+.star {
+    font-size: 4rem;
+    display: inline-block;
+    margin: 0 2rem;
+  }
 
 /*** MEETINGS ***/
 .meetings-container {
@@ -293,15 +294,15 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-}  
+}
 
 .events-container {
   width: 100%;
-}  
+}
 
 article.event {
   padding: 1.5rem;
-  position: relative;  
+  position: relative;
 }
 
 article.event h3 {
@@ -310,83 +311,137 @@ article.event h3 {
   font-weight: 800;
   font-size: 1.5rem;
   text-align: center;
-  
 }
 
 .flyer-preview > a {
- font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 @media (min-width: 481px) {
-
-  h1 {
-    font-size: 3.5rem;
-  }
 }
 @media (min-width: 769px) {
   /*HEADER*/
 
-nav {
-  justify-content: space-between;
-}
-
-.nav-link {
-  font-size: 1.5rem;
-  border: none;
-  background-color: transparent;
-  text-decoration: none;  
-}
-
-button {
-  font-size: 1.7rem;
-  padding: 1.5rem;
-  background: transparent;
-  border-color: var(--text-background-color);
-}
-
-button:hover, button:active, button:focus {
-  background-color: transparent;
-  color: var(--text-background-color);
-  transform: translate3d(0, 2px, 0);
-}
-
-.nav-link.active {
-  background-color: transparent;
-  color: var(--primary-color);
-  border-style: solid;
-  border-width: 2px;
-  border-bottom-left-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px;
-  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
-}
-
-.nav-link:hover {
-  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
-  transform: translate3d(0, 2px, 0);
-  border-style: solid;
-  border-width: 2px;
-  border-bottom-left-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px;
-  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
-}
-
-}
-@media (min-width: 1023px) {
+  nav {
+    justify-content: space-between;
+  }
 
   .nav-link {
-  font-size: 2rem;
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  button {
+    font-size: 1.7rem;
+    padding: 1.5rem;
+    background: transparent;
+    border-color: var(--text-background-color);
+  }
+
+  button:hover,
+  button:active,
+  button:focus {
+    background-color: transparent;
+    color: var(--text-background-color);
+    transform: translate3d(0, 2px, 0);
+  }
+
+  .nav-link.active {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-style: solid;
+    border-width: 2px;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  }
+
+  .nav-link:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+    border-style: solid;
+    border-width: 2px;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  }
+
+  /*HOME */
+
+  h1 {
+    letter-spacing: 2px;
+    margin: 2rem 10rem 0 10rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
 }
+  
 
-button {
-  font-size: 2rem;
+ 
+
+
+
+@media (min-width: 1023px) {
+  /*HEADER*/
+
+  header {
+    padding: 2em;
+  }
+
+  .nav-link {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 2rem;
+  }
+
+   .home-container {
+    display: grid;
+    max-height: 90dvh;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: min-content;
+    grid-column-gap: 17px;
+    gap: 2rem;
+    padding: 0 3rem;
+    align-items: start;
+  }
+
+  .welcome {
+    grid-column: 1/9;
+    padding: 2rem;
+  }
+
+  .newcomer {
+    grid-column: 9/13;
+    padding: 3rem;
+    height: fit-content;
+  }
+
+  .home-container section.meetings {
+    padding: 3rem;
+    grid-column: 2/8;
+  }
+
+  .home-container section.conventions {
+    padding: 3rem;
+    grid-column: 8/12;
+  }
+
+  section p {
+    padding: 1rem;
+    font-size: 1.8rem;
+    font-weight: 550;
+  }
+
 }
-
-
-
-
-
-}
+  

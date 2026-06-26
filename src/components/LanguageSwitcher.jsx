@@ -1,5 +1,4 @@
 import Tooltip from "./Tooltip.jsx";
-import {useEffect, useState} from "react";
 
 function LanguageSwitcher({ language, setLanguage, isMobile }) {
   
