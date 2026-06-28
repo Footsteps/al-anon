@@ -12,13 +12,13 @@ function App() {
 
   const location = useLocation();
   const [language, setLanguage] = useState("en");
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
       const handleResize = () => {
-        console.log(window.innerWidth);
         setIsMobile(window.innerWidth <= 768);
       };
+      handleResize();
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -27,7 +27,7 @@ function App() {
     <div className={`app-container ${location.pathname.slice(1) || "home"}`}>
       <Header language={language} setLanguage={setLanguage} isMobile={isMobile}/>
       <Routes>
-        <Route path="/" isMobile={isMobile} element={<Home language={language}/>} />
+        <Route path="/" element={<Home language={language} isMobile={isMobile} />} />
         <Route path="/meetings" element={<Meetings language={language} />} />
         <Route path="/events" element={<Events language={language} />} />
         <Route path="/contact" element={<Contact language={language} />} />

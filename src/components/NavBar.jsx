@@ -9,7 +9,7 @@ export default function NavBar({language, setLanguage, isMobile}) {
       <LanguageSwitcher language={language} setLanguage={setLanguage} isMobile={isMobile}/>
       <NavLink className={({ isActive }) =>
           `nav-link border ${isActive ? "active" : ""}`}
-        to="/"isMobile={isMobile}>Home</NavLink>
+        to="/">Home</NavLink>
       <NavLink className={({ isActive }) =>
           `nav-link border ${isActive ? "active" : ""}`} 
         to="/meetings">Meetings</NavLink>

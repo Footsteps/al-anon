@@ -1,7 +1,6 @@
 import Tooltip from "./Tooltip.jsx";
 
 function LanguageSwitcher({ language, setLanguage, isMobile }) {
-  
 
   return (
     <div aria-label="Language switcher">
