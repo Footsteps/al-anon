@@ -22,7 +22,7 @@ export default function EventSubmissionForm({ language }) {
   if (submitted) {
     return (
       <section className="submit-section">
-        <p className="section-card">
+        <p className="section-card info-card">
           {language === "de"
             ? "Vielen Dank für Deine Nachricht!"
             : "Thank you for your message!"}
@@ -33,11 +33,11 @@ export default function EventSubmissionForm({ language }) {
 
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data">
-      <h2 className="section-card">
+      <p className="section-card info-card">
         {language === "de"
           ? "Hier ist Platz für Nachrichten oder Infos über Roundups :)"
           : "This is the space for a message or infos about a Roundup :)"}
-      </h2>
+      </p>
       <div className="form-group">
         {/* NACHRICHT */}
         <label className="sr-only" htmlFor="message">
@@ -140,7 +140,7 @@ export default function EventSubmissionForm({ language }) {
         <div className="flyer">
           <label className="file-btn">
             {language === "de"
-              ? "Flyer (PDF oder Bild) beifügen"
+              ? "Flyer (PDF oder Bild) hochladen"
               : "Upload Flyer (PDF or image)"}
             <input
               type="file"
@@ -169,7 +169,7 @@ export default function EventSubmissionForm({ language }) {
           </label>
         </div>
         <button type="submit" value="Submit" className="form-submit-btn">
-          Submit
+          {language === "de" ? "Absenden" : "Sunmit"}
         </button>
       </div>
       {/*.form-group */}

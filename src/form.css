@@ -11,11 +11,11 @@ form {
 }
 
 form > h2.section-card {
-    margin: 0 2rem 1rem 2rem;
+  margin: 0 2rem 1rem 2rem;
 }
 
 form > h2 {
-    font-size: 1.5rem;;
+  font-size: 1.5rem;
 }
 
 .submit-section {
@@ -25,7 +25,7 @@ form > h2 {
 }
 
 label {
-  font-style: italic;  
+  font-style: italic;
   font-weight: 900;
   color: #333;
   font-size: 1rem;
@@ -51,14 +51,17 @@ textarea,
 }
 
 .grid-2-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 18px;
 }
 
-label[for="organizer"], label[for="eventLanguage"], label[for="startDate"], label[for="endDate"] {
-    display: block;
-    margin: 0 0 1rem 0;
+label[for="organizer"],
+label[for="eventLanguage"],
+label[for="startDate"],
+label[for="endDate"] {
+  display: block;
+  margin: 0 0 1rem 0;
 }
 
 textarea {
@@ -75,19 +78,19 @@ textarea {
 }
 
 .flyer {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .flyer > p {
-    font-size: 1.3rem;
-    font-weight: 800;
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
 .file-btn {
-    width: 20rem;
-    font-style: normal;
+  width: 20rem;
+  font-style: normal;
 }
 
 .file-btn input {
@@ -95,14 +98,14 @@ textarea {
 }
 
 .consent {
-    margin: 1rem 0 0 0;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  margin: 1rem 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .consent > label {
-    margin: 0;
+  margin: 0;
 }
 
 .form-submit-btn {
@@ -121,3 +124,72 @@ textarea {
   transform: translateY(1px);
 }
 
+@media (min-width: 481px) {
+  form > .info-card,
+  textarea::placeholder,
+  .form-submit-btn {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  label,
+  select,
+  option,
+  .file-btn,
+  input[type="date"] {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+}
+
+@media (min-width: 769px) {
+  form > .info-card,
+  textarea::placeholder {
+    font-size: 1.5rem;
+  }
+
+  label,
+  select,
+  option,
+  .file-btn,
+  input[type="date"] {
+    font-size: 1.3rem;
+  }
+
+  .form-submit-btn {
+    padding: 1.5rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 2rem 0 0 0;
+  }
+
+   .form-submit-btn:hover {
+    padding: 1.5rem 3rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1023px) {
+  form > .info-card,
+  textarea::placeholder {
+    font-size: 2rem;
+  }
+
+  label,
+  select,
+  option,
+  .file-btn,
+  input[type="date"] {
+    font-size: 1.5rem;
+  }
+
+  .form-submit-btn {
+    padding: 1.7rem 3rem;
+    font-size: 1.8rem;
+  }
+
+  .form-submit-btn:hover {
+    padding: 1.7rem 3rem;
+    font-size: 1.8rem;
+  }
+}
