@@ -3,7 +3,7 @@ export default function EventCard({event, language}) {
     const flyerUrl = event.flyer?.[language] || event.flyer?.de || event.flyer?.en;
     
     return(
-        <article className="event section-card">
+        <article className="event-card section-card">
                     <h3>{event.title.toLocaleUpperCase()}</h3>
 
                     <p>
@@ -17,6 +17,15 @@ export default function EventCard({event, language}) {
                       <strong>{language === "de" ? "Ort" : "City"}:</strong>{" "}
                       {event.city}
                     </p>
+
+                    {event.location && <p>
+                      <strong>
+                        {language === "de" ? "Location" : "Location"}:
+                      </strong>{" "}
+                      {event.location}
+                    </p>
+}
+
 
                     <p>
                       <strong>

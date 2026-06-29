@@ -3,8 +3,8 @@ import data from "../data/events.json";
 
 export default function Events({ language }) {
   return (
-    <main className="events">
-      <section className="section-card">
+    <main className="events-main">
+      <section className="section-card info-card">
         <p>
           {language === "de"
             ? "Veranstaltungen von AA werden nur gelistet, wenn sie eine Al-Anon Beteiligung haben: Al-Anon Meetings und Al-Anon Sprecher_innen."
@@ -14,17 +14,17 @@ export default function Events({ language }) {
       {data.map(
         (monthGroup) =>
           monthGroup.events?.length > 0 && (
-            <section key={monthGroup.id}>
+            <section key={monthGroup.id} className="month-group">
               <h2 className="h-white-background">
                 {language === "de" ? monthGroup.month.de : monthGroup.month.en}
               </h2>
-              <div className="events-container">
+              <div className="event-cards-container">
               {monthGroup.events.map((event) => {
                 return (
                   <EventCard language={language} event = {event} key={event.id}/>
                 );
               })}
-              </div>
+              </div>            
             </section>
           ),
       )}

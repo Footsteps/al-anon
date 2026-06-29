@@ -1,7 +1,7 @@
 export default function Meetings({language}) {
     return(
         <main>
-            <section id="meetings" className="section-card meetings-info">
+            <section id="meetings" className="section-card info-card">
                 <h2>{language === "de" ? "Englischsprachige Al-Anon Meetings Berlin" : "English speaking Al-Anon meetings Berlin"}</h2>
                 <p>
                     {language === "de"
@@ -15,7 +15,7 @@ export default function Meetings({language}) {
                 <div className="card card-glass steps-and-spirituality">
                     <h4>7 pm || "Steps and Spirituality"</h4>
                     <p>Torstr. 190, 10115 Berlin</p>
-                    <p>Begegnungsstätte "Mehr Mitte", please knock or ring the bell</p>
+                    <p>Begegnungsstätte 'Mehr Mitte', please knock or ring the bell</p>
                 </div>
                 <div className="card card-glass serenity">
                     <h4>7 pm || "Serenity"</h4>

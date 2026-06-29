@@ -245,6 +245,7 @@ section p {
     inset 0 0 0.2rem 0.1rem hsl(260 75% 40% / 15%),
     inset 0 0 0.3rem 0.2rem hsl(260 75% 40% / 10%);
   backdrop-filter: blur(2rem);
+ 
 }
 
 .card h4 {
@@ -290,22 +291,18 @@ h2 {
 }
 
 /**EVENTS **/
-.events > section {
+.events-main > section {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.events-container {
-  width: 100%;
-}
-
-article.event {
+article.event-card {
   padding: 1.5rem;
   position: relative;
 }
 
-article.event h3 {
+article.event-card h3 {
   padding: 0.7rem 0;
   font-family: var(--heading-2-font);
   font-weight: 800;
@@ -398,6 +395,21 @@ article.event h3 {
     gap: 2rem;
   }
 
+  /**EVENTS**/
+
+.event-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  width: 330px;
+}
+
+.section-card p {
+  padding: 0;
+}
   
 }
 
@@ -434,6 +446,11 @@ article.event h3 {
     font-weight: 550;
   }
 
+  .info-card {
+    max-width: 800px;
+    margin: 3rem auto;
+  }
+
    .home-container {
     display: grid;
     max-height: 90dvh;
@@ -445,40 +462,35 @@ article.event h3 {
   }
 
   .welcome {
-    grid-column: 1/9;
+    grid-column: 1/8;
     padding: 2rem;
+    max-width: 900px;
   }
 
   .newcomer {
-    grid-column: 9/13;
+    grid-column: 8/12;
     padding: 3rem;
     height: fit-content;
   }
 
   .home-container section.meetings {
     padding: 3rem;
-    grid-column: 2/8;
+    grid-column: 2/7;
   }
 
   .home-container section.conventions {
     padding: 3rem;
-    grid-column: 8/12;
+    grid-column: 7/12;
   }
 
   /*MEETINGS*/
-  
-  .meetings-info {
-    max-width: 800px;
-    margin: 3rem auto;
-  }
 
   .meetings-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 500px));
     column-gap: 4rem;
     row-gap: 2rem;
     align-items: start;
-
     max-width: 1100px;
     margin: 0 auto;
     padding: 2rem;
@@ -506,6 +518,15 @@ article.event h3 {
   grid-row: 1/1;
 }
 
+.card {
+  min-width: 350px;
+}
+
+/**EVENTS**/
+
+.event-card {
+  width: 400px;
+}
 
 }
   
