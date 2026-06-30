@@ -51,7 +51,7 @@ body {
 
   z-index: -1;
 }
-.app-container.home::before {
+.app-container.home::before, .app-container.impressum::before, .app-container.privacy::before {
   background-image: url("./assets/background.jpg");
   opacity: 0.5;
 }
@@ -107,7 +107,7 @@ header {
   border-bottom: 1px solid var(--primary-color);
 }
 
-nav {
+nav, footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -266,6 +266,8 @@ h2 {
   font-size: 2rem;
 }
 
+
+
 .star {
   font-size: 4rem;
   display: inline-block;
@@ -289,6 +291,7 @@ h2 {
 }
 
 /**EVENTS **/
+
 .events-main > section {
   display: flex;
   flex-direction: column;
@@ -312,12 +315,48 @@ article.event-card h3 {
   font-size: 1.3rem;
 }
 
+/** FOOTER **/
+footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--primary-color);
+  margin: 1rem 0 0 0;
+  height: 2rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--text-background-color);
+}
+
+.footer-font {
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--primary-color);
+}
+
+footer a:hover {
+  transform: translate3d(0, 2px, 0);
+}
+
+/*LEGAL PAGE*/
+.legal-page h3 {
+  font-size: 1.3rem;
+  padding: 1.5rem;
+  text-decoration: underline;
+  font-weight: 200;
+}
+
 @media (min-width: 481px) {
+  main {
+  margin: 0 0 3rem 0;
+}
+
   h1 {
     margin: 1rem 0;
   }
 
-  .section-card > p {
+  section > p {
     font-size: 1.4rem;
   }
 
@@ -329,9 +368,32 @@ article.event-card h3 {
     margin: 1rem 0;
   }
 
+  /** FOOTER **/
+.footer-font {
+  font-size: 1.2rem;
 }
 
+/*LEGAL PAGE*/
+.legal-page {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.legal-page h3 {
+  font-size: 1.5rem; 
+}
+
+.legal-page p {
+  font-size: 1.4rem;
+  padding: 0 1.5rem;
+}
+
+}
+
+
+
 @media (min-width: 769px) {
+
   .info-card {
     max-width: 800px;
     margin: 3rem auto;
@@ -443,7 +505,33 @@ article.event-card h3 {
   .section-card p {
     padding: 0;
   }
+
+  /*FOOTER*/
+.footer-font {
+  font-size: 1.4rem;
 }
+
+/*LEGAL PAGE*/
+.legal-page {
+  width: 60vw;
+}
+
+.legal-page h3 {
+  font-size: 1.7rem; 
+}
+
+.legal-page p {
+  font-size: 1.7rem;
+  padding: 0 1.5rem;
+}
+
+.app-container.privacy .legal-page {
+  width: 80vw;
+}
+
+}
+
+
 
 @media (min-width: 1023px) and (max-width: 1157px) {
   .card {
@@ -488,7 +576,8 @@ article.event-card h3 {
 
   section p {
     padding: 0;
-    font-size: 1.8rem;
+
+    font-size: 2rem;
     font-weight: 550;
   }
 
@@ -559,9 +648,36 @@ article.event-card h3 {
 
   /**EVENTS**/
 
+
   .event-card {
     width: 400px;
   }
+
+  /*FOOTER*/
+
+  footer {
+    justify-content: center;
+    gap: 5rem;
+    padding: 2rem;
+  }
+
+  .footer-font {
+  font-size: 1.7rem;
+}
+
+/*LEGAL PAGE*/
+.legal-page {
+  width: 60vw;
+}
+
+.legal-page h3 {
+  font-size: 2rem; 
+}
+
+.legal-page p {
+  font-size: 1.8rem;
+}
+
 }
 
 @media(min-width: 1367px) {

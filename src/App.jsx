@@ -4,6 +4,8 @@ import Header from "./components/Header.jsx";
 import Events from "./pages/Events.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Footer.jsx";
+import Impressum from "./pages/Impressum.jsx";
+import Privacy from "./pages/Privacy.jsx";
 
 
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -15,6 +17,7 @@ function App() {
   const [language, setLanguage] = useState("en");
   const [isMobile, setIsMobile] = useState(false);
 
+  console.log(window.innerWidth);
   useEffect(() => {
     
       const handleResize = () => {
@@ -33,8 +36,10 @@ function App() {
         <Route path="/meetings" element={<Meetings language={language} />} />
         <Route path="/events" element={<Events language={language} />} />
         <Route path="/contact" element={<Contact language={language} />} />
+        <Route path="/impressum" element={<Impressum language={language} />} />
+        <Route path="/privacy" element={<Privacy language={language} />} />
       </Routes>
-      <Footer />       
+      <Footer language={language}/>       
     </div>
   )
 }

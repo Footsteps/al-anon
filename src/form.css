@@ -170,6 +170,10 @@ textarea {
 }
 
 @media (min-width: 1023px) {
+  form {
+    margin: 0 auto 2rem;
+  }
+
   form > .info-card,
   textarea::placeholder {
     font-size: 2rem;

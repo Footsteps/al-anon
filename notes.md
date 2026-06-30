@@ -10,9 +10,9 @@ Wenn du die Seite auf Vercel oder Netlify deployt hast, können wir das Formular
 //////////////////////////////
 Tooltip auf Handy testen wenn live
 //////////////////////////////
-Footer -> Fotos 
+Schrift größer Home großer Bildschirm
 //////////////////////////////
-Fotos: Quellen
+
 
 Hintergrund Meetings:
 laterne (Meetings)

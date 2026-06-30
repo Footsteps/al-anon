@@ -169,7 +169,7 @@ export default function EventSubmissionForm({ language }) {
           </label>
         </div>
         <button type="submit" value="Submit" className="form-submit-btn">
-          {language === "de" ? "Absenden" : "Sunmit"}
+          {language === "de" ? "Absenden" : "Submit"}
         </button>
       </div>
       {/*.form-group */}
