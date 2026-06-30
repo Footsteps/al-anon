@@ -226,7 +226,6 @@ section p {
   text-align: justify;
 }
 
-
 /**GLASS CARD**/
 
 .card {
@@ -245,7 +244,6 @@ section p {
     inset 0 0 0.2rem 0.1rem hsl(260 75% 40% / 15%),
     inset 0 0 0.3rem 0.2rem hsl(260 75% 40% / 10%);
   backdrop-filter: blur(2rem);
- 
 }
 
 .card h4 {
@@ -269,10 +267,10 @@ h2 {
 }
 
 .star {
-    font-size: 4rem;
-    display: inline-block;
-    margin: 0 2rem;
-  }
+  font-size: 4rem;
+  display: inline-block;
+  margin: 0 2rem;
+}
 
 /*** MEETINGS ***/
 .meetings-container {
@@ -314,7 +312,34 @@ article.event-card h3 {
   font-size: 1.3rem;
 }
 
+@media (min-width: 481px) {
+  h1 {
+    margin: 1rem 0;
+  }
+
+  .section-card > p {
+    font-size: 1.4rem;
+  }
+
+  #meetings > p {
+    padding: 1rem;
+  }
+
+  .card {
+    margin: 1rem 0;
+  }
+
+}
+
 @media (min-width: 769px) {
+  .info-card {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    width: fit-content;
+    text-align: center;
+  }
+
   /*HEADER*/
 
   nav {
@@ -328,7 +353,10 @@ article.event-card h3 {
     text-decoration: none;
   }
 
-  button, button:hover, button:active, button:focus {
+  button,
+  button:hover,
+  button:active,
+  button:focus {
     font-size: 1.7rem;
     padding: 1.5rem;
     background: var(--text-background-color);
@@ -341,7 +369,6 @@ article.event-card h3 {
   button:focus {
     transform: translate3d(0, 2px, 0);
   }
-
 
   .nav-link.active {
     background-color: transparent;
@@ -369,7 +396,7 @@ article.event-card h3 {
 
   /*HOME */
 
-   h1 {
+  h1 {
     letter-spacing: 2px;
     margin: 2rem 10rem 0 10rem;
     font-size: 2.8rem;
@@ -378,12 +405,18 @@ article.event-card h3 {
   h2 {
     font-size: 2.3rem;
   }
- 
 
-   section p {
+  section p {
     padding: 1rem;
     font-size: 1.5rem;
     font-weight: 550;
+  }
+
+  .home-container .newcomer,
+  .home-container .meetings,
+  .home-container .conventions {
+    width: 350px;
+    margin: 2rem auto;
   }
 
   /**Meetings**/
@@ -397,23 +430,36 @@ article.event-card h3 {
 
   /**EVENTS**/
 
-.event-cards-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  .event-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .event-card {
+    width: 330px;
+  }
+
+  .section-card p {
+    padding: 0;
+  }
 }
 
-.event-card {
-  width: 330px;
+@media (min-width: 1023px) and (max-width: 1157px) {
+  .card {
+    min-width: 300px;
+  }
+
 }
 
-.section-card p {
-  padding: 0;
-}
-  
+@media (min-width: 1158px){
+  .card {
+    min-width: 350px;
+  }
+
 }
 
-@media (min-width: 1023px) {
+@media (min-width: 1023px){
   /*HEADER*/
 
   header {
@@ -429,8 +475,8 @@ article.event-card h3 {
   }
 
   /**HOME*/
-   
-   h1 {
+
+  h1 {
     letter-spacing: 2px;
     margin: 2rem 10rem 0 10rem;
     font-size: 3rem;
@@ -446,12 +492,7 @@ article.event-card h3 {
     font-weight: 550;
   }
 
-  .info-card {
-    max-width: 800px;
-    margin: 3rem auto;
-  }
-
-   .home-container {
+  .home-container {
     display: grid;
     max-height: 90dvh;
     grid-template-columns: repeat(12, 1fr);
@@ -488,45 +529,55 @@ article.event-card h3 {
   .meetings-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 500px));
-    column-gap: 4rem;
+    column-gap: 2rem;
     row-gap: 2rem;
     align-items: start;
     max-width: 1100px;
     margin: 0 auto;
     padding: 2rem;
+  }
+
+  .wednesday-container {
+    grid-column: 1/2;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .wednesday {
+    grid-row: 1/1;
+    grid-column: 1/2;
+  }
+
+  .thursday {
+    grid-row: 1/1;
+    grid-column: 3/4;
+  }
+
+  .saturday {
+    grid-row: 1/1;
+  }
+
+  /**EVENTS**/
+
+  .event-card {
+    width: 400px;
+  }
 }
 
-.wednesday-container {
-  grid-column: 1/2;
-  display: grid;
-  gap: 2rem;
-  
+@media(min-width: 1367px) {
+   nav > a:last-child {
+    border-style: solid;
+    border-width: 2px;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+
+    box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+
+    padding: 1.5rem;
+    background: var(--text-background-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
 }
-
-.wednesday {
-  grid-row: 1/1;
-  grid-column: 1/2;
-}
-
-.thursday {
-  grid-row: 1/1;
-  grid-column: 3/4;
-}
-
-
-.saturday {
-  grid-row: 1/1;
-}
-
-.card {
-  min-width: 350px;
-}
-
-/**EVENTS**/
-
-.event-card {
-  width: 400px;
-}
-
-}
-  

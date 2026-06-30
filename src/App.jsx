@@ -3,6 +3,7 @@ import Meetings from "./pages/Meetings.jsx";
 import Header from "./components/Header.jsx";
 import Events from "./pages/Events.jsx";
 import Contact from "./pages/Contact.jsx";
+import Footer from "./components/Footer.jsx";
 
 
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -15,6 +16,7 @@ function App() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    
       const handleResize = () => {
         setIsMobile(window.innerWidth <= 768);
       };
@@ -31,7 +33,8 @@ function App() {
         <Route path="/meetings" element={<Meetings language={language} />} />
         <Route path="/events" element={<Events language={language} />} />
         <Route path="/contact" element={<Contact language={language} />} />
-      </Routes>       
+      </Routes>
+      <Footer />       
     </div>
   )
 }
