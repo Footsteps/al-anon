@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Anton";
+  src: url("./assets/fonts/anton-v27-latin-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskervville";
+  src: url("./assets/fonts/baskervville-v20-latin-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("./assets/fonts/raleway-v37-latin-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -25,10 +43,10 @@ body {
 
 /*** FONTS ***/
 :root {
-  --heading-font: Anton, sans-serif;
-  --heading-2-font: Baskervville, sans-serif;
-  --body-font: Raleway, sans-serif;
-  --button-font: Raleway, sans-serif;
+  --heading-font: "Anton", sans-serif;
+  --heading-2-font: "Baskervville", serif;
+  --body-font: "Raleway", sans-serif;
+  --button-font: "Raleway", sans-serif;
 }
 
 /*** OVERLAY ***/
@@ -38,7 +56,7 @@ body {
 
   width: 100%;
   max-width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
    
   display: flex;
   flex-direction: column;
@@ -59,22 +77,22 @@ main {
   z-index: -1;
 }
 .app-container.home::before, .app-container.impressum::before, .app-container.privacy::before {
-  background-image: url("./assets/background.jpg");
+  background-image: url("./assets/images/background.webp");
   opacity: 0.5;
 }
 
 .app-container.meetings::before {
-  background-image: url("./assets/background-meetings.jpg");
+  background-image: url("./assets/images/background-meetings.webp");
   opacity: 0.6;
 }
 
 .app-container.events::before {
-  background-image: url("./assets/Eibsee.jpg");
+  background-image: url("./assets/images/Eibsee.webp");
   opacity: 0.6;
 }
 
 .app-container.contact::before {
-  background-image: url("./assets/Blumenwiese2.jpg");
+  background-image: url("./assets/images/Blumenwiese2.webp");
   opacity: 0.5;
 }
 

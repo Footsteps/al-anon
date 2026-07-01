@@ -1,4 +1,11 @@
 ///////////////////////////////
+Wenn die Seite funktional fertig ist, wären das sinnvolle nächste Schritte:
+
+Lighthouse laufen lassen (Performance, Accessibility, Best Practices, SEO).
+Tastaturbedienung testen (Tab-Reihenfolge, Fokus sichtbar?).
+Ein paar kleine Animationen oder Hover-Effekte hinzufügen – aber sparsam.
+Die Seite deployen (z. B. GitHub Pages oder Vercel).
+
 
 Form: Nächster Schritt
 Wenn du die Seite auf Vercel oder Netlify deployt hast, können wir das Formular so erweitern, dass:
@@ -7,10 +14,6 @@ Wenn du die Seite auf Vercel oder Netlify deployt hast, können wir das Formular
 - Spam-Schutz (Captcha/Honeypot) eingebaut wird,
 - du keinen eigenen Server betreiben musst
 
-//////////////////////////////
-home: margin zwischen footer & container
-//////////////////////////////
-events: Breite Boxen (mittel)
 //////////////////////////////
 Tooltip auf Handy testen wenn live
 //////////////////////////////
