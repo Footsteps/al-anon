@@ -1,4 +1,4 @@
-[
+export const events = [
  {
     "id": "2026-01",
     "month": {"de": "Januar 2026", "en": "January 2026"},
@@ -46,7 +46,7 @@
         "location": "Seminarhaus Grainau e.V.",
         "website": "https://alcoholics-anonymous.eu/event/the-35th-intergroup-bavarian-roundup/",
         "email": null,
-        "flyer": {"de": "../../public/flyer/35th Annual AA Bavarian Roundup-Final-mku-02.pdf"}
+        "flyer": {"de": "/flyer/35th Annual AA Bavarian Roundup-Final-mku-02.pdf"}
       }
     ]
   },
@@ -64,9 +64,10 @@
         "city": "97348 Rödelsee",
         "country": {"de": "Deutschland", "en":"Germany"},
         "address": "Schwanberg 3",
+        "location": "Geistliches Zentrum Schwanberg e.V.",
         "website": null,
         "email": "schwanberg.treffen@gmail.com",
-        "flyer": {"de": "../../public/flyer/2026_internationales_Al-Anon-Treffen_Schwanberg.pdf", "en": "../../public/flyer/2026_International_Al-Anon_Roundup_Germany.pdf"}
+        "flyer": {"de": "/flyer/2026_internationales_Al-Anon-Treffen_Schwanberg.pdf", "en": "/flyer/2026_International_Al-Anon_Roundup_Germany.pdf"}
       },
         {
         "id": 3,
@@ -81,7 +82,7 @@
         "location": "Jugendherberge",
         "website": "https://www.dachypaa.org/",
         "email": null,
-        "flyer": {"de": "../../public/flyer/DACHYPAA_2026_FLYER a5.pdf"}
+        "flyer": {"de": "/flyer/DACHYPAA_2026_FLYER a5.pdf"}
       },
       {
         "id": 4,
@@ -116,7 +117,7 @@
         "location": "Seminarhaus Grainau e.V.",
         "website": "https://alanon-munich.de/save-the-date-2026/",
         "email": " conventiongrainau@posteo.de",
-        "flyer": {"de": "../../public/flyer/Flyer_Grainau_2026-1.pdf"}
+        "flyer": {"de": "/flyer/Flyer_Grainau_2026-1.pdf"}
         }]
   },
   {

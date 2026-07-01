@@ -11,19 +11,19 @@ import Privacy from "./pages/Privacy.jsx";
 import { Routes, Route, useLocation } from "react-router-dom";
 import {useEffect, useState} from "react"
 
-function App() {
+export default function App() {
 
   const location = useLocation();
   const [language, setLanguage] = useState("en");
-  const [isMobile, setIsMobile] = useState(false);
+  const MOBILE_BREAKPOINT = 768;
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= MOBILE_BREAKPOINT);
 
-  console.log(window.innerWidth);
   useEffect(() => {
     
       const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768);
+        setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
       };
-      handleResize();
+    
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -43,5 +43,3 @@ function App() {
     </div>
   )
 }
-
-export default App

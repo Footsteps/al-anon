@@ -1,33 +1,31 @@
 import EventCard from "../components/EventCard.jsx";
-import data from "../data/events.json";
+import {events} from "../data/events.js";
+import {text} from "../data/text.js";
 
 export default function Events({ language }) {
+  const eventsText = text[language].events.text;
+
   return (
     <main className="events-main">
       <section className="section-card info-card">
-        <p>
-          {language === "de"
-            ? "Veranstaltungen von AA werden nur gelistet, wenn sie eine Al-Anon Beteiligung haben: Al-Anon Meetings und Al-Anon Sprecher_innen."
-            : "AA events are listed only if they include Al-Anon participation: Al-Anon meetings and Al-Anon speakers."}
-        </p>
+        <p>{eventsText}</p>
       </section>
-      {data.map(
-        (monthGroup) =>
-          monthGroup.events?.length > 0 && (
-            <section key={monthGroup.id} className="month-group">
-              <h2 className="h-white-background">
-                {language === "de" ? monthGroup.month.de : monthGroup.month.en}
+      {events.filter(({events})=> events?.length > 0)
+      .map(({id, month, events}) => (
+         <section key={id} className="month-group">
+          <h2 className="h-white-background">
+                {month[language]}
               </h2>
               <div className="event-cards-container">
-              {monthGroup.events.map((event) => {
-                return (
+              {events.map((event) =>  (
                   <EventCard language={language} event = {event} key={event.id}/>
-                );
-              })}
-              </div>            
-            </section>
-          ),
-      )}
+                )
+              )}
+              </div>
+         </section>
+
+      )/*map*/
+      )} /*filter*/
     </main>
   );
 }

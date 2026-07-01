@@ -1,21 +1,24 @@
 import LegalPage from "../components/LegalPage";
+import {text} from "../data/text.js";
 
 export default function Privacy({language}) {
+    const t = text[language].privacy;
+
     return(
-        <LegalPage title={language === "de" ? "Datenschutzerklärung": "Privacy Policy"}>
-            <h3>{language === "de" ? "1. Verantwortliche": "Responsability"}</h3>
-            <p>{language === "de" ? "Verantwortlich für diese Website ist:": "The following person is responsible for this website:"}</p>
-            <p>Angela Schumacher <br />
-            Röbellweg 14, 13125 Berlin</p>
+        <LegalPage title={t.title}>
+            <h3>{t.responsible.heading}</h3>
+            <p>{t.responsible.text}</p>
+            <address>{t.responsible.info.fullName}<br />
+            {t.responsible.info.address}</address>
             
-            <h3>{language === "de" ? "2. Kontaktformular": "2. Contact Form"}</h3>
-            <p>{language === "de" ? "Wenn du mich über das Kontaktformular kontaktierst, werden die von dir eingegebenen Daten ausschließlich zur Bearbeitung deiner Anfrage verwendet.": "If you contact me via the contact form, the information you provide will be used solely to process your inquiry."}</p>
+            <h3>{t.contact.heading}</h3>
+            <p>{t.contact.text}</p>
 
-            <h3>3. Server-Logfiles</h3>
-            <p>{language === "de" ? "Beim Besuch dieser Website werden technisch notwendige Informationen (z. B. IP-Adresse, Browsertyp, Uhrzeit) vom Hosting-Anbieter verarbeitet.": "When you visit this website, technically necessary information (e.g., IP address, browser type, time) is processed by the hosting provider."}</p>
+            <h3>{t.logfiles.heading}</h3>
+            <p>{t.logfiles.text}</p>
 
-            <h3>{language === "de" ? "4. Deine Rechte": "4. Your Rights"}</h3>
-            <p>{language === "de" ? "Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Beschwerde bei einer Datenschutzaufsichtsbehörde.": "You have the right to access, correct, or delete your personal data, to restrict its processing, and to file a complaint with a data protection supervisory authority."}</p>
+            <h3>{t.rights.heading}</h3>
+            <p>{t.rights.text}</p>
 
         </LegalPage>
     )

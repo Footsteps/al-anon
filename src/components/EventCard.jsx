@@ -1,57 +1,53 @@
+import {text} from "../data/text.js";
+
 export default function EventCard({event, language}) {
     const lang = language === "de" ? "de-DE" : "en-US";
     const flyerUrl = event.flyer?.[language] || event.flyer?.de || event.flyer?.en;
-    
+    const textLabels = text[language].events.labels;
+    const startDate = new Date(event.startDate).toLocaleDateString(lang);
+    const endDate = new Date(event.endDate).toLocaleDateString(lang);
     return(
         <article className="event-card section-card">
-                    <h3>{event.title.toLocaleUpperCase()}</h3>
+                    <h3>{event.title.toUpperCase()}</h3>
 
                     <p>
-                      <strong>{language === "de" ? "Datum" : "Date"}:</strong>{" "}
-                      {new Date(event.startDate).toLocaleDateString(lang)}
-                      {" - "}
-                      {new Date(event.endDate).toLocaleDateString(lang)}
+                      <strong>{textLabels.date}:</strong>{" "}
+                      {startDate} - {endDate}
                     </p>
 
                     <p>
-                      <strong>{language === "de" ? "Ort" : "City"}:</strong>{" "}
+                      <strong>{textLabels.city}:</strong>{" "}
                       {event.city}
                     </p>
 
-                    {event.location && <p>
-                      <strong>
-                        {language === "de" ? "Location" : "Location"}:
-                      </strong>{" "}
+                    <p>
+                      <strong>{textLabels.location}:</strong>{" "}
                       {event.location}
                     </p>
-}
+
 
 
                     <p>
-                      <strong>
-                        {language === "de" ? "Adresse" : "Address"}:
-                      </strong>{" "}
+                      <strong>{textLabels.address}: </strong>{" "}
                       {event.address}
-                    </p>
+                      </p>
 
                       <p>
                         <strong>
-                          {language === "de" ? "Organisator_in" : "Host"}:
+                          {textLabels.organizer}:
                         </strong>{" "}
                         {event.organizer}
                       </p>
 
                       <p>
-                        <strong>
-                          {language === "de" ? "Sprache" : "Language"}:
-                        </strong>{" "}
+                        <strong>{textLabels.language}: </strong>
                         {event.languages?.[language]}
                       </p>
 
                     {event.email && (
                       <p>
                         <strong>
-                          {language === "de" ? "E-Mail" : "Email"}:
+                          {textLabels.email}:
                         </strong>{" "}
                         <a href={`mailto:${event.email}`}>{event.email}</a>
                       </p>
@@ -63,9 +59,7 @@ export default function EventCard({event, language}) {
                           href={event.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                        >
-                          {language === "de" ? "Webseite" : "Website"}
-                        </a>
+                        >{textLabels.website}</a>
                       </p>
                     )}
 
@@ -77,11 +71,7 @@ export default function EventCard({event, language}) {
                             href={flyerUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                          >
-                            {language === "de"
-                              ? "Flyer (PDF öffnen)"
-                              : "Flyer (open PDF)"}
-                          </a>
+                          >{textLabels.flyer}</a>
                         ) : (
                           <img
                             src={flyerUrl}

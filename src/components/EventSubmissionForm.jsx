@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { text } from "../data/text.js";
 
 export default function EventSubmissionForm({ language }) {
   const [submitted, setSubmitted] = useState(false);
   const [fileName, setFileName] = useState("");
+  const t = text[language].contact;
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
     for (const [key, value] of formData.entries()) {
       console.log(key, value);
@@ -16,132 +19,92 @@ export default function EventSubmissionForm({ language }) {
     setSubmitted(true);
     setFileName("");
 
-    e.target.reset();
+    form.reset();
   }
 
   if (submitted) {
     return (
       <section className="submit-section">
-        <p className="section-card info-card">
-          {language === "de"
-            ? "Vielen Dank für Deine Nachricht!"
-            : "Thank you for your message!"}
-        </p>
+        <p className="section-card info-card">{t.submitText} </p>
       </section>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data">
-      <p className="section-card info-card">
-        {language === "de"
-          ? "Hier ist Platz für Nachrichten oder Infos über Roundups :)"
-          : "This is the space for a message or infos about a Roundup :)"}
-      </p>
-      <div className="form-group">
+      <p className="section-card info-card">{t.text}</p>
+      <fieldset className="form-group">
         {/* NACHRICHT */}
-        <label className="sr-only" htmlFor="message">
-          {language === "de" ? "Deine Nachricht" : "Your Message"}
-        </label>
+        <legend className="sr-only">{t.labels.message}</legend>
         <textarea
           id="message"
           name="message"
           rows="8"
-          placeholder={language === "de" ? "Deine Nachricht" : "Your Message"}
+          placeholder={t.labels.message}
         />
 
         {/* NAME */}
-        <label htmlFor="name">
-          {language === "de" ? "Veranstaltungsname" : "Event Name"}
-        </label>
-        <input type="text" name="title" id="name" />
+        <label htmlFor="title">{t.labels.title}</label>
+        <input type="text" name="title" id="title" />
 
         {/* DATUM */}
         <div className="grid-2-container">
           <div>
-            <label htmlFor="startDate">
-              {language === "de" ? "Veranstaltungsbeginn" : "Start Date"}{" "}
-            </label>
+            <label htmlFor="startDate">{t.labels.startDate}</label>
             <input type="date" name="startDate" id="startDate" />
           </div>
 
           <div>
-            <label htmlFor="endDate">
-              {language === "de" ? "Veranstaltungsende" : "End Date"}
-            </label>
+            <label htmlFor="endDate">{t.labels.endDate}</label>
             <input type="date" name="endDate" id="endDate" />
           </div>
         </div>
 
         {/* ORT */}
-        <label htmlFor="city">{language === "de" ? "Ort" : "City"}</label>
+        <label htmlFor="city">{t.labels.city}</label>
         <input type="text" name="city" id="city" />
 
         {/* ADRESSE */}
-        <label htmlFor="address">
-          {language === "de" ? "Adresse" : "Address"}
-        </label>
+        <label htmlFor="address">{t.labels.address}</label>
         <input type="text" name="address" id="address" />
 
         <div className="grid-2-container">
           {/* ORGANIZER */}
           <div>
-            <label htmlFor="organizer">
-              {language === "de"
-                ? "Welches Programm organisiert?"
-                : "Which program is the organizer?"}
-            </label>
+            <label htmlFor="organizer">{t.labels.organizer}</label>
             <input type="text" name="organizer" id="organizer" />
           </div>
 
           {/* SPRACHE */}
           <div>
-            <label htmlFor="eventLanguage">
-              {language === "de" ? "Sprache Roundup" : "Event Language"}
-            </label>
+            <label htmlFor="eventLanguage">{t.labels.language}</label>
             <select name="eventLanguage" id="eventLanguage">
-              <option value="">
-                {language === "de" ? "Bitte wählen" : "Please choose"}
-              </option>
-
-              <option value="de">Deutsch</option>
-
-              <option value="en">English</option>
-
-              <option value="both">
-                {language === "de" ? "Deutsch & Englisch" : "English & German"}
-              </option>
-
-              <option value="other">
-                {language === "de" ? "Andere Sprache" : "Another language"}
-              </option>
+              <option value="">{t.labels.option}</option>
+              {Object.entries(t.labels.value).map(([key, value]) => (
+                <option value={key} key={key}>
+                  {value}
+                </option>
+              ))}
             </select>
           </div>
         </div>
 
         {/* EMAIL EVENT */}
-        <label htmlFor="email">
-          {language === "de"
-            ? "Email des Events (optional)"
-            : "E-Mail of event (optional)"}
-        </label>
+        <label htmlFor="email">{t.labels.email}</label>
         <input type="email" name="email" id="email" />
 
         {/* WEBSITE */}
-        <label htmlFor="website">
-          {language === "de" ? "Webseite (optional)" : "Website (optional)"}
-        </label>
+        <label htmlFor="website">{t.labels.website}</label>
         <input type="url" name="website" id="website" />
-      </div>
+      </fieldset>
       {/* .form-group */}
 
-      <div className="form-group">
+      <fieldset className="form-group">
+        <legend className="sr-only">{t.labels.flyer}</legend>
         {/* FLYER */}
         <div className="flyer">
           <label className="file-btn">
-            {language === "de"
-              ? "Flyer (PDF oder Bild) hochladen"
-              : "Upload Flyer (PDF or image)"}
+            {t.labels.flyer}
             <input
               type="file"
               name="flyer"
@@ -150,28 +113,20 @@ export default function EventSubmissionForm({ language }) {
             />
           </label>
 
-          <p>
-            {fileName
-              ? fileName
-              : language === "de"
-                ? "Keine Datei beigefügt"
-                : "No file uploaded"}
-          </p>
+          <p>{fileName || t.labels.filename}</p>
         </div>
 
         {/* KONSENT */}
         <div className="consent">
           <input type="checkbox" name="consent" id="consent" required />
           <label className="section-card" htmlFor="consent">
-            {language === "de"
-              ? "Ich bin damit einverstanden, dass die übermittelten Daten ggf. zur Veröffentlichung der Veranstaltung verarbeitet werden."
-              : "I agree that the submitted information may be processed for publication of the event."}
+            {t.labels.checkbox}
           </label>
         </div>
         <button type="submit" value="Submit" className="form-submit-btn">
-          {language === "de" ? "Absenden" : "Submit"}
+          {t.labels.submit}
         </button>
-      </div>
+      </fieldset>
       {/*.form-group */}
     </form>
   );

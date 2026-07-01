@@ -8,9 +8,17 @@ Wenn du die Seite auf Vercel oder Netlify deployt hast, können wir das Formular
 - du keinen eigenen Server betreiben musst
 
 //////////////////////////////
+home: margin zwischen footer & container
+//////////////////////////////
+events: Breite Boxen (mittel)
+//////////////////////////////
+contact: fieldset rand weg
+//////////////////////////////
+address stylen
+//////////////////////////////
 Tooltip auf Handy testen wenn live
 //////////////////////////////
-Schrift größer Home großer Bildschirm
+buttons verkürzen
 //////////////////////////////
 
 
