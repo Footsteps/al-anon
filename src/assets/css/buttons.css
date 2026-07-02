@@ -49,6 +49,7 @@ button:is(:hover, :focus-visible, :active),
   background-color: var(--primary-color);
   color: var(--button-background-color);
   transform: translate3d(0, 2px, 0);
+  outline: none;
 }
 
 .icon {

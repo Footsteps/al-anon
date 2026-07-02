@@ -14,6 +14,19 @@ fieldset {
   border: none;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}
+
 form > h2.section-card {
   margin: 0 2rem 1rem 2rem;
 }
@@ -52,6 +65,12 @@ textarea,
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
+}
+
+select:focus-visible, .file-btn:focus-within, input[type="checkbox"]:focus-visible, button[type="submit"]:focus-visible {
+    box-shadow:  0 0 0 4px rgb(0 0 0 / 0.2),
+    0 8px 20px rgb(0 0 0 / 0.25);
+    outline: none;
 }
 
 .grid-2-container {
@@ -97,8 +116,18 @@ textarea {
   font-style: normal;
 }
 
+/*input not visible*/
 .file-btn input {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .consent {
