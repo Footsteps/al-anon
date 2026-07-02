@@ -1,25 +1,37 @@
 import { useState } from "react";
 import { text } from "../data/text.js";
+import { errors } from "../data/errors.js";
+import { contactService } from "../services/contactService.js";
 
 export default function EventSubmissionForm({ language }) {
   const [submitted, setSubmitted] = useState(false);
   const [fileName, setFileName] = useState("");
   const t = text[language].contact;
+  const e = errors[language];
+  const [error, setError] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
+    setError("");
     e.preventDefault();
 
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    for (const [key, value] of formData.entries()) {
-      console.log(key, value);
+    try {
+      const result = await contactService(formData, language);
+      
+      if (!result.success) {
+        setError(result.error);
+        return;
+      }
+
+      setError("");
+      setSubmitted(true);
+      setFileName("");
+      form.reset();
+    } catch (err) {
+      console.log(err);
     }
-
-    setSubmitted(true);
-    setFileName("");
-
-    form.reset();
   }
 
   if (submitted) {
@@ -42,10 +54,9 @@ export default function EventSubmissionForm({ language }) {
           rows="8"
           placeholder={t.labels.message}
         />
-         {/* EMAIL EVENT */}
+        {/* EMAIL EVENT */}
         <label htmlFor="email">{t.labels.email}</label>
         <input type="email" name="email" id="email" />
-
 
         {/* NAME */}
         <label htmlFor="title">{t.labels.title}</label>
@@ -127,9 +138,11 @@ export default function EventSubmissionForm({ language }) {
             {t.labels.checkbox}
           </label>
         </div>
+        {error && <p className="error-message">{e[error]}</p>}
         <button type="submit" value="Submit" className="form-submit-btn">
           {t.labels.submit}
         </button>
+        
       </fieldset>
       {/*.form-group */}
     </form>

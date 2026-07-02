@@ -1,16 +1,43 @@
-# React + Vite
+Event Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React application for sharing information about dance events and allowing users to submit new events or contact the organizers.
 
-Currently, two official plugins are available:
+Features
+Responsive design
+Accessible navigation and forms
+Multilingual interface
+Event submission form
+Optional flyer upload (PDF or image)
+Express backend (in development)
+Tech Stack
+Frontend
+React
+React Router
+Vite
+Backend
+Node.js
+Express
+Project Structure
+project/
+│
+├── src/                # React frontend
+├── public/
+├── server/             # Express backend
+│   ├── app.js
+│   └── package.json
+│
+├── package.json
+└── vite.config.js
+Getting Started
+Frontend
+npm install
+npm run dev
+Backend
+cd server
+npm install
+npm run dev
+Status
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🚧 The backend is currently under development.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The next milestone is connecting the React frontend to the Express API.

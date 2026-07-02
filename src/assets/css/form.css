@@ -157,6 +157,41 @@ textarea {
   transform: translateY(1px);
 }
 
+.error-message {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  padding: 0.8rem 1rem;
+
+  background-color: #fff3f3;
+  color: #8b1e1e;
+
+  border: 2px solid #d84b4b;
+  border-radius: 12px;
+
+  font-weight: 500;
+  line-height: 1.4;
+
+  box-shadow:
+    0 0 0 4px rgb(216 75 75 / 0.12),
+    0 6px 14px rgb(0 0 0 / 0.08);
+}
+
+.error-message {
+  animation: fade-in 180ms ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (min-width: 481px) {
   form > .info-card,
   textarea::placeholder,
@@ -177,7 +212,8 @@ textarea {
 
 @media (min-width: 769px) {
   form > .info-card,
-  textarea::placeholder {
+  textarea::placeholder,
+  .error-message {
     font-size: 1.5rem;
   }
 
@@ -208,7 +244,8 @@ textarea {
   }
 
   form > .info-card,
-  textarea::placeholder {
+  textarea::placeholder,
+  .error-message {
     font-size: 2rem;
   }
 

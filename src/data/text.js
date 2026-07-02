@@ -53,10 +53,10 @@ export const text = {
     } /*events*/,
     contact: {
       submitText: "Vielen Dank für deine Nachricht!",
-      text: "Hier ist Platz für Nachrichten oder Infos über Roundups :)",
+      text: "Hier ist Platz für Nachrichten oder Infos über Roundups :) Bei Infos über Roundups ist es nötig, entweder eine Email-Adresse ODER eine Webseite ODER einen Flyer anzugeben. Oder Du schreibst mir nur eine Nachricht. :)",
       labels: {
         message: "Deine Nachricht",
-        email: "Deine Email-Adresse",
+        email: "Deine Email-Adresse (optional)",
         title: "Veranstaltungsname",
         startDate: "Veranstaltungsbeginn",
         endDate: "Veranstaltungsende",
@@ -70,8 +70,8 @@ export const text = {
           "en": "Englisch", 
           "both": "Deutsch & Englisch", 
           "other": "Andere Sprache"},
-        eventEmail: "Email des Events (optional)",
-        website: "Webseite (optional)",
+        eventEmail: "Email des Events",
+        website: "Webseite",
         flyer: "Flyer (PDF oder Bild) hochladen",
         filename: "Keine Datei beigefügt",
         checkbox: "Ich bin damit einverstanden, dass die übermittelten Daten ggf. zur Veröffentlichung der Veranstaltung verarbeitet werden.",
@@ -172,10 +172,10 @@ export const text = {
     } /*events*/,
     contact: {
       submitText: "Thank you for your message!",
-      text: "Here is a place for messages or information about Roundups :)",
+      text: "Here is a place for messages or information about Roundups :) When providing information about roundups, you'll have to provide either an event email address OR a website OR a flyer. Or you just leave a message :)",
       labels: {
         message: "Your message",
-        email: "Your Email address",
+        email: "Your Email address (optional)",
         title: "Event name",
         startDate: "Event start date",
         endDate: "Event end date",
