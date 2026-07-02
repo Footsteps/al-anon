@@ -42,6 +42,10 @@ export default function EventSubmissionForm({ language }) {
           rows="8"
           placeholder={t.labels.message}
         />
+         {/* EMAIL EVENT */}
+        <label htmlFor="email">{t.labels.email}</label>
+        <input type="email" name="email" id="email" />
+
 
         {/* NAME */}
         <label htmlFor="title">{t.labels.title}</label>
@@ -90,8 +94,8 @@ export default function EventSubmissionForm({ language }) {
         </div>
 
         {/* EMAIL EVENT */}
-        <label htmlFor="email">{t.labels.email}</label>
-        <input type="email" name="email" id="email" />
+        <label htmlFor="event-email">{t.labels.eventEmail}</label>
+        <input type="email" name="event-email" id="event-email" />
 
         {/* WEBSITE */}
         <label htmlFor="website">{t.labels.website}</label>

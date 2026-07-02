@@ -2,9 +2,6 @@
 Wenn die Seite funktional fertig ist, wären das sinnvolle nächste Schritte:
 
 
-Ein paar kleine Animationen oder Hover-Effekte hinzufügen – aber sparsam.
-Die Seite deployen (z. B. GitHub Pages oder Vercel).
-
 
 Form: Nächster Schritt
 Wenn du die Seite auf Vercel oder Netlify deployt hast, können wir das Formular so erweitern, dass:

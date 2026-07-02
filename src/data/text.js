@@ -56,6 +56,7 @@ export const text = {
       text: "Hier ist Platz für Nachrichten oder Infos über Roundups :)",
       labels: {
         message: "Deine Nachricht",
+        email: "Deine Email-Adresse",
         title: "Veranstaltungsname",
         startDate: "Veranstaltungsbeginn",
         endDate: "Veranstaltungsende",
@@ -69,7 +70,7 @@ export const text = {
           "en": "Englisch", 
           "both": "Deutsch & Englisch", 
           "other": "Andere Sprache"},
-        email: "Email des Events (optional)",
+        eventEmail: "Email des Events (optional)",
         website: "Webseite (optional)",
         flyer: "Flyer (PDF oder Bild) hochladen",
         filename: "Keine Datei beigefügt",
@@ -174,6 +175,7 @@ export const text = {
       text: "Here is a place for messages or information about Roundups :)",
       labels: {
         message: "Your message",
+        email: "Your Email address",
         title: "Event name",
         startDate: "Event start date",
         endDate: "Event end date",
@@ -187,7 +189,7 @@ export const text = {
           "en": "English", 
           "both": "English & German", 
           "other": "Other language"},
-        email: "Email of the event (optional)",
+        eventEmail: "Email of the event (optional)",
         website: "Website (optional)",
         flyer: "Flyer (upload PDF or image)",
         filename: "No file attached",
