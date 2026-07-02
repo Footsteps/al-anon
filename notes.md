@@ -1,7 +1,7 @@
 ///////////////////////////////
 Wenn die Seite funktional fertig ist, wären das sinnvolle nächste Schritte:
 
-Lighthouse laufen lassen (Performance, Accessibility, Best Practices, SEO).
+
 Tastaturbedienung testen (Tab-Reihenfolge, Fokus sichtbar?).
 Ein paar kleine Animationen oder Hover-Effekte hinzufügen – aber sparsam.
 Die Seite deployen (z. B. GitHub Pages oder Vercel).
@@ -15,6 +15,13 @@ Wenn du die Seite auf Vercel oder Netlify deployt hast, können wir das Formular
 - du keinen eigenen Server betreiben musst
 
 //////////////////////////////
+Tastatursteuerung: 
+- 1. Fokus setzen
+- Language switch mit enter
+- button styling hover auch wenn mit tab angesteuert
+- form: upload mit enter
+- checkbox klicken mit enter
+  
 Tooltip auf Handy testen wenn live
 //////////////////////////////
 buttons verkürzen
