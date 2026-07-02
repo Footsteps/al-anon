@@ -3,8 +3,8 @@ import ContactIcon from "../assets/contact-2.svg";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 import {text} from "../data/text.js";
 
-export default function NavBar({ language, setLanguage, isMobile }) {
-const t = text[language].navbar;
+export default function NavBar({ language, setLanguage, isMobile}) {
+  const t = text[language].navbar;
   return (
     <nav aria-label="Main navigation">
       <LanguageSwitcher
@@ -13,8 +13,8 @@ const t = text[language].navbar;
         isMobile={isMobile}
       />
       <NavLink
-        className={({ isActive }) =>
-          `nav-link border ${isActive ? "active" : ""}`
+        className={({ isActive }) => 
+          `nav-link ${isMobile ? "border" : ""} ${isActive ? "border" : ""}`
         }
         to="/"
       >
@@ -22,7 +22,7 @@ const t = text[language].navbar;
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          `nav-link border ${isActive ? "active" : ""}`
+          `nav-link ${isMobile ? "border" : ""} ${isActive ? "border" : ""}`
         }
         to="/meetings"
       >
@@ -30,7 +30,7 @@ const t = text[language].navbar;
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          `nav-link border ${isActive ? "active" : ""}`
+          `nav-link ${isMobile ? "border" : ""} ${isActive ? "border" : ""}`
         }
         to="/events"
       >
@@ -38,7 +38,7 @@ const t = text[language].navbar;
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          `nav-link border ${isMobile ? "round-btn" : ""} ${isActive ? "active" : ""}`
+          `nav-link ${isMobile ? "round-btn border" : ""} ${isActive ? "border" : ""}`
         }
         to="/contact"
         aria-label={t.contact}

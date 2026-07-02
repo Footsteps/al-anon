@@ -2,7 +2,6 @@
 Wenn die Seite funktional fertig ist, wären das sinnvolle nächste Schritte:
 
 
-Tastaturbedienung testen (Tab-Reihenfolge, Fokus sichtbar?).
 Ein paar kleine Animationen oder Hover-Effekte hinzufügen – aber sparsam.
 Die Seite deployen (z. B. GitHub Pages oder Vercel).
 

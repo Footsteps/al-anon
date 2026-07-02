@@ -169,6 +169,9 @@ footer {
   margin: 2rem;
   padding: 1rem;
   border-radius: 15px;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
 }
 
 section p,
@@ -572,20 +575,3 @@ address {
   }
 }
 
-@media (min-width: 1367px) {
-  nav > a:last-child {
-    border-style: solid;
-    border-width: 2px;
-    border-bottom-left-radius: 15px 255px;
-    border-bottom-right-radius: 225px 15px;
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 225px;
-
-    box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
-
-    padding: 1.5rem;
-    background: var(--text-background-color);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-  }
-}

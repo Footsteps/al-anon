@@ -13,7 +13,7 @@ import {useEffect, useState} from "react"
 
 export default function App() {
 
-  const location = useLocation();
+  const pathname = useLocation().pathname;
   const [language, setLanguage] = useState("en");
   const MOBILE_BREAKPOINT = 768;
   const [isMobile, setIsMobile] = useState(() => window.innerWidth <= MOBILE_BREAKPOINT);
@@ -29,7 +29,7 @@ export default function App() {
     }, []);
 
   return (
-    <div className={`app-container ${location.pathname.slice(1) || "home"}`}>
+    <div className={`app-container ${pathname.slice(1) || "home"}`}>
       <Header language={language} setLanguage={setLanguage} isMobile={isMobile}/>
       <Routes>
         <Route path="/" element={<Home language={language} isMobile={isMobile} />} />
