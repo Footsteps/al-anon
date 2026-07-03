@@ -19,7 +19,7 @@ export default function EventSubmissionForm({ language }) {
 
     try {
       const result = await contactService(formData, language);
-      
+
       if (!result.success) {
         setError(result.error);
         return;
@@ -142,7 +142,6 @@ export default function EventSubmissionForm({ language }) {
         <button type="submit" value="Submit" className="form-submit-btn">
           {t.labels.submit}
         </button>
-        
       </fieldset>
       {/*.form-group */}
     </form>

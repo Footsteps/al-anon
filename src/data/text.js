@@ -176,7 +176,7 @@ export const text = {
       labels: {
         message: "Your message",
         email: "Your Email address (optional)",
-        title: "Event name",
+        title: "Event title",
         startDate: "Event start date",
         endDate: "Event end date",
         city: "City",

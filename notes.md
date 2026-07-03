@@ -1,5 +1,24 @@
 /*Routes & Functions & Controllers*/
-Contactform --> fetchContactForm --> /contact (contactRoutes) --> submitContactForm (contactController) 
+Contactform 
+    │
+    ▼
+contactService: POST request to "/contact" using 
+    │
+    ▼
+contactRoutes: uses 
+    │
+    ▼
+middleware: upload.js to upload file 
+    │
+    ▼
+then: post-request using router to controller: submitContactForm
+    │
+    ▼
+contactController: calls validateSubmission and sends json back
+    │
+    ▼
+contactService: gets json and sends it back to Contactform 
+ 
 
 /*TODO*/
 Fehler bündeln
@@ -10,15 +29,19 @@ Tooltip auf Handy testen wenn live
 //////////////////////////////
 
 /*Architektur*/
-Browser
+React
     │
-React Components
+    ▼
+Service (fetch)
     │
-contactService
+    ▼
+Express Route
     │
-fetch()
+    ▼
+Controller
     │
-Express API
+    ▼
+Validator
 
 /*Logik*/
 Ist das eine Nachricht?
