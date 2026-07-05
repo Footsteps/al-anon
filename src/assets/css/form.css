@@ -120,6 +120,10 @@ textarea:focus {
   font-style: normal;
 }
 
+.file-btn.input-error {
+  border: 1px solid red;
+}
+
 /*input not visible*/
 .file-btn input {
   position: absolute;
@@ -188,7 +192,8 @@ textarea:focus {
 input.input-error,
 select.input-error,
 textarea.input-error,
-fieldset.input-error {
+fieldset.input-error,
+.file-btn.input-error {
   border: 3px solid #c62828;
   box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.15);
 }

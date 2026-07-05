@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 
 import contactRoutes from "./routes/contactRoutes.js"
+import { uploadErrorHandler } from "./middleware/uploadErrorHandler.js";
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.use("/contact", contactRoutes);
 
+app.use(uploadErrorHandler);
 
 app.listen(PORT, () => {
     console.log(`Server läuft auf http://localhost:${PORT}`);

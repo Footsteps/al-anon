@@ -22,7 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-nodes.md
+notes.md
 
 # Backend
 server/node_modules

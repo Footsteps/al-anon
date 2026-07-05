@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { text } from "../data/text.js";
-import { errorMessages} from "../data/errorMessages.js";
+import { errorMessages } from "../data/errorMessages.js";
 import { contactService } from "../services/contactService.js";
 
 export default function EventSubmissionForm({ language }) {
@@ -63,7 +63,12 @@ export default function EventSubmissionForm({ language }) {
 
         {/* NAME */}
         <label htmlFor="title">{t.labels.title}</label>
-        <input type="text" name="title" id="title" className={validationErrors?.title ? "input-error" : ""}/>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          className={validationErrors?.title ? "input-error" : ""}
+        />
 
         {/* DATUM */}
         <div className="grid-2-container">
@@ -107,26 +112,28 @@ export default function EventSubmissionForm({ language }) {
           </div>
         </div>
 
+        <fieldset
+          className={`form-group ${validationErrors?.hasContactInformation ? "form-group-error" : ""}`}
+        >
+          <legend className="sr-only">{t.labels.flyer}</legend>
 
-      <fieldset
-      className={`form-group ${validationErrors?.hasContactInformation ? "form-group-error" : ""}`}
-      
-      >
-        <legend className="sr-only">{t.labels.flyer}</legend>
+          {/* EMAIL EVENT */}
+          <label htmlFor="event-email">{t.labels.eventEmail}</label>
+          <input type="email" name="event-email" id="event-email" />
 
-        {/* EMAIL EVENT */}
-        <label htmlFor="event-email">{t.labels.eventEmail}</label>
-        <input type="email" name="event-email" id="event-email" />
-
-        {/* WEBSITE */}
-        <label htmlFor="website">{t.labels.website}</label>
-        <input type="url" name="website" id="website" />
-      </fieldset>
-      {/* .form-group */}
+          {/* WEBSITE */}
+          <label htmlFor="website">{t.labels.website}</label>
+          <input type="url" name="website" id="website" />
+        </fieldset>
+        {/* .form-group */}
 
         {/* FLYER */}
         <div className="flyer">
-          <label className="file-btn">
+          <label className={`file-btn ${validationErrors?.flyer === "file_too_large" ||
+                validationErrors?.flyer === "invalid_file_type"
+                  ? "input-error"
+                  : ""
+              }`}>
             {t.labels.flyer}
             <input
               type="file"
@@ -146,12 +153,14 @@ export default function EventSubmissionForm({ language }) {
             {t.labels.checkbox}
           </label>
         </div>
-           {validationErrors && Object.keys(validationErrors).length > 0 && <p className="error-message">
-            {Object.values(validationErrors).map(err => (
-              <li key={err}>{e[err]}</li>
-            ))}
-            
-            </p>}
+        {validationErrors && Object.keys(validationErrors).length > 0 && (
+          <p className="error-message">
+            {Object.values(validationErrors).map((err) => {
+              console.log(e[err]);
+              return <li key={err}>{e[err]}</li>;
+            })}
+          </p>
+        )}
 
         <button type="submit" value="Submit" className="form-submit-btn">
           {t.labels.submit}
@@ -161,5 +170,3 @@ export default function EventSubmissionForm({ language }) {
     </form>
   );
 }
-
-
