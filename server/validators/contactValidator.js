@@ -1,3 +1,6 @@
+import { validateMessage } from "./messageValidator.js";
+import { validateEvent } from "./eventValidator.js";
+
 export function validateSubmission(body, file) {
   const hasEventData = Boolean(
     body.title ||
@@ -19,54 +22,5 @@ export function validateSubmission(body, file) {
   return validateMessage(body);
 }
 
-function validateEvent(body, file) {
-  const hasContactInformation = Boolean(
-    body["event-email"] || body.website || file,
-  );
-
-  if (!body.title) {
-    return {
-      success: false,
-      error: "title_required",
-    };
-  }
-
-  if (!hasContactInformation) {
-    return {
-      success: false,
-      error: "eventContactInformation_required",
-    };
-  }
-
-  if (!body.consent) {
-    return {
-      success: false,
-      error: "consent_required",
-    };
-  }
-
-  return {
-    success: true,
-  };
-}
-
-function validateMessage(body) {
-  if (!body.message) {
-    return {
-      success: false,
-      error: "message_required",
-    };
-  }
-
-  if (!body.consent) {
-    return {
-      success: false,
-      error: "consent_required",
-    };
-  }
 
 
-  return {
-    success: true,
-  };
-}

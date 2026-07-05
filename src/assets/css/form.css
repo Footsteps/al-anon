@@ -55,22 +55,26 @@ input[type="date"],
 select,
 textarea,
 .file-btn {
+  font-size: 1.3rem;
   width: 100%;
   padding: 0.9rem 1rem;
   border: 1px solid #d9d9d9;
   border-radius: 8px;
   background: #fff;
-  font-size: 1rem;
   font-family: inherit;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
-select:focus-visible, .file-btn:focus-within, input[type="checkbox"]:focus-visible, button[type="submit"]:focus-visible {
-    box-shadow:  0 0 0 4px rgb(0 0 0 / 0.2),
+select:focus-visible,
+.file-btn:focus-within,
+input[type="checkbox"]:focus-visible,
+button[type="submit"]:focus-visible {
+  box-shadow:
+    0 0 0 4px rgb(0 0 0 / 0.2),
     0 8px 20px rgb(0 0 0 / 0.25);
-    outline: none;
+  outline: none;
 }
 
 .grid-2-container {
@@ -92,9 +96,9 @@ textarea {
   min-height: 180px;
 }
 
-input,
-select,
-textarea {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: #4f7cff;
   box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.15);
@@ -159,7 +163,7 @@ textarea {
 
 .error-message {
   font-size: 1.3rem;
-  margin: 1rem 0;
+  
   padding: 0.8rem 1rem;
 
   background-color: #fff3f3;
@@ -176,8 +180,24 @@ textarea {
     0 6px 14px rgb(0 0 0 / 0.08);
 }
 
-.error-message {
+.error-message li {
   animation: fade-in 180ms ease-out;
+  list-style: none;
+}
+
+input.input-error,
+select.input-error,
+textarea.input-error,
+fieldset.input-error {
+  border: 3px solid #c62828;
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.15);
+}
+
+fieldset.form-group-error {
+  border: 3px solid #c62828;
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.15);
+  border-radius: 8px;
+  padding: 1rem;
 }
 
 @keyframes fade-in {
@@ -208,6 +228,16 @@ textarea {
     font-size: 1.2rem;
     font-weight: 800;
   }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="date"],
+  select,
+  textarea,
+  .file-btn {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 769px) {
@@ -232,7 +262,7 @@ textarea {
     margin: 2rem 0 0 0;
   }
 
-   .form-submit-btn:hover {
+  .form-submit-btn:hover {
     padding: 1.5rem 3rem;
     font-size: 1.3rem;
   }
@@ -247,6 +277,13 @@ textarea {
   textarea::placeholder,
   .error-message {
     font-size: 2rem;
+  }
+
+   input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  textarea {
+    font-size: 1.7rem;
   }
 
   label,

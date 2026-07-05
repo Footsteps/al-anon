@@ -1,8 +1,9 @@
+
 /*Routes & Functions & Controllers*/
 Contactform 
     │
     ▼
-contactService: POST request to "/contact" using 
+contactService: fetch request to "/contact" using 
     │
     ▼
 contactRoutes: uses 
@@ -23,6 +24,13 @@ contactService: gets json and sends it back to Contactform
 /*TODO*/
 Fehler bündeln
 Feld rot machen wo was fehlt
+Upload validieren
+validator auseinander nehmen --> contactValidator.js, eventValidator.js, messageValidator.js 
+Spam-Schutz (Honeypot)
+Deployment
+
+/*DONE*/
+error added: mail_failed, font size input fields,refacturing validator, handle multiple errors
 
 //////////////////////////////
 Tooltip auf Handy testen wenn live
