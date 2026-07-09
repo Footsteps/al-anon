@@ -1,16 +1,10 @@
 import multer from "multer";
+import {config} from "../config/config.js"
 
 const storage = multer.memoryStorage();
 
-const allowedTypes = [
-  "application/pdf",
-  "image/jpeg",
-  "image/png",
-  "image/webp",
-];
-
 const fileFilter = (req, file, cb) => {
-  if (allowedTypes.includes(file.mimetype)) {
+  if (config.upload.allowedMimeTypes.includes(file.mimetype)) {
     cb(null, true);
   } else {
     cb(new Error("invalid_file_type"));
@@ -21,6 +15,6 @@ export const upload = multer({
   storage,
   fileFilter,
   limits: {
-    fileSize: 5 * 1024 * 1024,
+    fileSize: config.upload.maxFileSize,
   },
 });

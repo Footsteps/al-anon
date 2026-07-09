@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 notes.md
+.env
 
 # Backend
 server/node_modules

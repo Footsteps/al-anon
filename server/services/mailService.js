@@ -1,14 +1,14 @@
 import { Resend } from "resend";
+import { config } from "../config/config.js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendMail({ body, file }) {
-  //const response = await resend.emails.send({
 
   const email = {
-    from: "onboarding@resend.dev",
-    to: process.env.MAIL_TO,
-    subject: "Al-Anon App",
+    from: config.mail.from,
+    to: config.mail.to,
+    subject: config.mail.subject,
 
     text: `
 Neue Nachricht
