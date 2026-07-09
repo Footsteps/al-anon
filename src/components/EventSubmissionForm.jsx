@@ -129,11 +129,14 @@ export default function EventSubmissionForm({ language }) {
 
         {/* FLYER */}
         <div className="flyer">
-          <label className={`file-btn ${validationErrors?.flyer === "file_too_large" ||
-                validationErrors?.flyer === "invalid_file_type"
-                  ? "input-error"
-                  : ""
-              }`}>
+          <label
+            className={`file-btn ${
+              validationErrors?.flyer === "file_too_large" ||
+              validationErrors?.flyer === "invalid_file_type"
+                ? "input-error"
+                : ""
+            }`}
+          >
             {t.labels.flyer}
             <input
               type="file"
@@ -161,6 +164,17 @@ export default function EventSubmissionForm({ language }) {
             })}
           </p>
         )}
+
+        <div className="honeypot" aria-hidden="true">
+          <label htmlFor="contactPerson">Company</label>
+          <input
+            type="text"
+            id="contactPerson"
+            name="contactPerson"
+            autoComplete="off"
+            tabIndex="-1"
+          />
+        </div>
 
         <button type="submit" value="Submit" className="form-submit-btn">
           {t.labels.submit}

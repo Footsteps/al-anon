@@ -217,6 +217,14 @@ fieldset.form-group-error {
   }
 }
 
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 @media (min-width: 481px) {
   form > .info-card,
   textarea::placeholder,

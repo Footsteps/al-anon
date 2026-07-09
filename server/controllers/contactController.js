@@ -4,6 +4,12 @@ import { sendMail } from "../services/mailService.js";
 export async function submitContactForm(req,res) {
     const validation = validateSubmission(req.body, req.file);
 
+    if (validation.spam) {
+        return res.json({
+            success: true
+        })
+    }
+
     if(!validation.success) {
         return res.status(400).json(validation);
     }

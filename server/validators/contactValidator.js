@@ -2,6 +2,14 @@ import { validateMessage } from "./messageValidator.js";
 import { validateEvent } from "./eventValidator.js";
 
 export function validateSubmission(body, file) {
+
+  if(body.middleName) {
+    return {
+      success: false,
+      spam: true
+    }
+  }
+
   const hasEventData = Boolean(
     body.title ||
     body.startDate ||
