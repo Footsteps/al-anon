@@ -44,10 +44,13 @@ button {
   text-decoration: none;
 }
 
-button:is(:hover, :focus-visible, :active),
-.nav-link:is(:hover, :focus-visible, :active) {
+button:is(:hover, :focus-visible, :active) {
   background-color: var(--primary-color);
   color: var(--button-background-color);
+}
+
+button:is(:hover, :focus-visible, :active),
+.nav-link:is(:hover, :focus-visible, :active) {
   transform: translate3d(0, 2px, 0);
 }
 
@@ -59,7 +62,8 @@ button:is(:hover, :focus-visible, :active),
 @media (min-width: 769px) {
   .nav-link {
     font-size: 1.5rem;
-    background-color: transparent;
+    background-color: var(--button-background-color);
+    border-radius: 5px;
     text-decoration: none;
   } /*styling nav-links: all items header except language switcher*/
 
@@ -85,32 +89,12 @@ button:is(:hover, :focus-visible, :active),
   button:is(:hover, :active, :focus-visible), .nav-link:is(:hover, :focus-visible) {
     transform: translateY(2px);
   }
-    .app-container.events .nav-link  {
-    background-color: var(--button-background-color);
-  }
+   
 }
 
 @media (min-width: 1023px) {
     .nav-link, button {
         font-size: 2rem;
     }
-}
-
-@media (min-width: 1367px) {
- .app-container.meetings nav > a:last-child {
-    border-style: solid;
-    border-width: 2px;
-    border-bottom-left-radius: 15px 255px;
-    border-bottom-right-radius: 225px 15px;
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 225px;
-
-    box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
-
-    padding: 1.5rem;
-    background: var(--text-background-color);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-  }
 }
 
