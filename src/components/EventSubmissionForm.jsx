@@ -4,10 +4,12 @@ import { errorMessages } from "../data/errorMessages.js";
 import { contactService } from "../services/contactService.js";
 import {useFocusFirstError} from "../hooks/useFocusFirstError.js"
 import {ValidationErrors} from "./ValidationErrors.jsx";
+import { EventDetails } from "./EventDetails.jsx";
 
 export default function EventSubmissionForm({ language }) {
   const [submitted, setSubmitted] = useState(false);
   const [fileName, setFileName] = useState("");
+
   const [validationErrors, setValidationErrors] = useState();
 
   const t = text[language].contact;
@@ -65,98 +67,11 @@ export default function EventSubmissionForm({ language }) {
           className={validationErrors?.message ? "input-error" : ""}
         />
 
-        {/* EMAIL EVENT */}
+        {/* EMAIL */}
         <label htmlFor="email">{t.labels.email}</label>
         <input type="email" name="email" id="email" />
 
-        {/* NAME */}
-        <label htmlFor="title">{t.labels.title}</label>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          className={validationErrors?.title ? "input-error" : ""}
-        />
-
-        {/* DATUM */}
-        <div className="grid-2-container">
-          <div>
-            <label htmlFor="startDate">{t.labels.startDate}</label>
-            <input type="date" name="startDate" id="startDate" />
-          </div>
-
-          <div>
-            <label htmlFor="endDate">{t.labels.endDate}</label>
-            <input type="date" name="endDate" id="endDate" />
-          </div>
-        </div>
-
-        {/* ORT */}
-        <label htmlFor="city">{t.labels.city}</label>
-        <input type="text" name="city" id="city" />
-
-        {/* ADRESSE */}
-        <label htmlFor="address">{t.labels.address}</label>
-        <input type="text" name="address" id="address" />
-
-        <div className="grid-2-container">
-          {/* ORGANIZER */}
-          <div>
-            <label htmlFor="organizer">{t.labels.organizer}</label>
-            <input type="text" name="organizer" id="organizer" />
-          </div>
-
-          {/* SPRACHE */}
-          <div>
-            <label htmlFor="eventLanguage">{t.labels.language}</label>
-            <select name="eventLanguage" id="eventLanguage">
-              <option value="">{t.labels.option}</option>
-              {Object.entries(t.labels.value).map(([key, value]) => (
-                <option value={key} key={key}>
-                  {value}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        <fieldset
-          tabIndex={-1}
-          className={`form-group ${validationErrors?.hasContactInformation ? "form-group-error" : ""}`}
-        >
-          <legend className="sr-only">{t.labels.flyer}</legend>
-
-          {/* EMAIL EVENT */}
-          <label htmlFor="event-email">{t.labels.eventEmail}</label>
-          <input type="email" name="event-email" id="event-email" />
-
-          {/* WEBSITE */}
-          <label htmlFor="website">{t.labels.website}</label>
-          <input type="url" name="website" id="website" />
-
-          {/* FLYER */}
-          <div className="flyer">
-            <label
-              className={`file-btn ${
-                validationErrors?.flyer === "file_too_large" ||
-                validationErrors?.flyer === "invalid_file_type"
-                  ? "input-error"
-                  : ""
-              }`}
-            >
-              {t.labels.flyer}
-              <input
-                type="file"
-                name="flyer"
-                accept=".pdf,image/*"
-                onChange={(e) => setFileName(e.target.files?.[0]?.name || "")}
-              />
-            </label>
-
-            <p>{fileName || t.labels.filename}</p>
-          </div>
-        </fieldset>
-        {/* .form-group */}
+        <EventDetails fileName={fileName} setFileName={setFileName} t={t} validationErrors={validationErrors}/>      
 
         {/* KONSENT */}
         <div className="consent">
