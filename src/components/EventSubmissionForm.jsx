@@ -1,45 +1,27 @@
-import { useState } from "react";
 import { text } from "../data/text.js";
 import { errorMessages } from "../data/errorMessages.js";
-import { contactService } from "../services/contactService.js";
+
+import { useContactForm } from "../hooks/useContactForm.js";
 import {useFocusFirstError} from "../hooks/useFocusFirstError.js"
 import {ValidationErrors} from "./ValidationErrors.jsx";
 import { EventDetails } from "./EventDetails.jsx";
 
 export default function EventSubmissionForm({ language }) {
-  const [submitted, setSubmitted] = useState(false);
-  const [fileName, setFileName] = useState("");
-
-  const [validationErrors, setValidationErrors] = useState();
 
   const t = text[language].contact;
   const e = errorMessages[language];
   
+  const {
+  submitted,
+  validationErrors,
+  fileName,
+  setFileName,
+  handleSubmit,
+} = useContactForm(language);
 
   useFocusFirstError(validationErrors);
   
-  async function handleSubmit(e) {
-    
-    e.preventDefault();
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const result = await contactService(formData, language);
-
-      if (!result.success) {
-        setValidationErrors(result.errors);
-        return;
-      }
-      setValidationErrors({});
-      setSubmitted(true);
-      setFileName("");
-      form.reset();
-    } catch (err) {
-      console.log(err);
-    }
-  }
 
   if (submitted) {
     return (
