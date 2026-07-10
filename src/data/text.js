@@ -75,7 +75,8 @@ export const text = {
         flyer: "Flyer (PDF oder Bild) hochladen",
         filename: "Keine Datei beigefügt",
         checkbox: "Ich bin damit einverstanden, dass die übermittelten Daten ggf. zur Veröffentlichung der Veranstaltung verarbeitet werden.",
-        submit: "Absenden"
+        submit: "Absenden",
+        sending: "Wird gesendet..."
       } /*labels*/,
 
     },/*contact*/
@@ -194,7 +195,8 @@ export const text = {
         flyer: "Flyer (upload PDF or image)",
         filename: "No file attached",
         checkbox: "I agree that the submitted information may be processed for publication of the event.",
-        submit: "Submit"
+        submit: "Submit",
+        sending: "Sending..."
       } /*labels*/,
     },/*contact*/
     footer: {

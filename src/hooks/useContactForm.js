@@ -5,10 +5,13 @@ export function useContactForm(language) {
     const [submitted, setSubmitted] = useState(false);
     const [validationErrors, setValidationErrors] = useState({});
     const [fileName, setFileName] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
       async function handleSubmit(e) {
         
         e.preventDefault();
+
+        setIsSubmitting(true);
     
         const form = e.currentTarget;
         const formData = new FormData(form);
@@ -26,6 +29,8 @@ export function useContactForm(language) {
           form.reset();
         } catch (err) {
           console.error(err);
+        } finally {
+            setIsSubmitting(false);
         }
       }
 
@@ -47,6 +52,7 @@ export function useContactForm(language) {
         fileName,
         setFileName, 
         handleSubmit,
-        clearFieldError
+        clearFieldError,
+        isSubmitting
       }
 }
