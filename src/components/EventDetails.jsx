@@ -1,4 +1,5 @@
-export function EventDetails({ validationErrors, t, fileName, setFileName }) {
+export function EventDetails({ validationErrors, t, fileName, setFileName, clearFieldError }) {
+
   return (
     <>
       {/* NAME */}
@@ -8,6 +9,7 @@ export function EventDetails({ validationErrors, t, fileName, setFileName }) {
         name="title"
         id="title"
         className={validationErrors?.title ? "input-error" : ""}
+        onChange={() => clearFieldError("title")}
       />
 
       {/* DATUM */}

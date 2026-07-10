@@ -28,11 +28,25 @@ export function useContactForm(language) {
           console.error(err);
         }
       }
+
+      function clearFieldError(fieldName) {
+        setValidationErrors(prev => {
+            if(!prev[fieldName]) return prev;
+
+            const next = {...prev};
+            delete next[fieldName];
+
+            return next;
+        })
+      }
+
+
       return {
         submitted, 
         validationErrors,
         fileName,
         setFileName, 
-        handleSubmit
+        handleSubmit,
+        clearFieldError
       }
 }
