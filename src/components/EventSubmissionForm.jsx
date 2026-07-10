@@ -2,6 +2,7 @@ import { useState } from "react";
 import { text } from "../data/text.js";
 import { errorMessages } from "../data/errorMessages.js";
 import { contactService } from "../services/contactService.js";
+import {useFocusFirstError} from "../hooks/useFocusFirstError.jsx"
 
 export default function EventSubmissionForm({ language }) {
   const [submitted, setSubmitted] = useState(false);
@@ -10,6 +11,8 @@ export default function EventSubmissionForm({ language }) {
   const e = errorMessages[language];
   const [validationErrors, setValidationErrors] = useState();
 
+  useFocusFirstError(validationErrors);
+  
   async function handleSubmit(e) {
     setValidationErrors({});
     e.preventDefault();
@@ -22,11 +25,10 @@ export default function EventSubmissionForm({ language }) {
 
       if (!result.success) {
         setValidationErrors(result.errors);
-        console.log(result.errors);
         return;
       }
 
-      //setValidationErrors({});
+      setValidationErrors({});
       setSubmitted(true);
       setFileName("");
       form.reset();
@@ -45,6 +47,14 @@ export default function EventSubmissionForm({ language }) {
 
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data">
+      {validationErrors && Object.keys(validationErrors).length > 0 && (
+        <ul className="error-message">
+          {Object.values(validationErrors).map((err) => (
+           <li key={err}>{e[err]}</li>
+          ))}
+        </ul>
+      )}
+
       <p className="section-card info-card">{t.text}</p>
       <fieldset className="form-group">
         {/* NACHRICHT */}
@@ -113,6 +123,7 @@ export default function EventSubmissionForm({ language }) {
         </div>
 
         <fieldset
+          tabIndex={-1}
           className={`form-group ${validationErrors?.hasContactInformation ? "form-group-error" : ""}`}
         >
           <legend className="sr-only">{t.labels.flyer}</legend>
@@ -124,30 +135,30 @@ export default function EventSubmissionForm({ language }) {
           {/* WEBSITE */}
           <label htmlFor="website">{t.labels.website}</label>
           <input type="url" name="website" id="website" />
+
+          {/* FLYER */}
+          <div className="flyer">
+            <label
+              className={`file-btn ${
+                validationErrors?.flyer === "file_too_large" ||
+                validationErrors?.flyer === "invalid_file_type"
+                  ? "input-error"
+                  : ""
+              }`}
+            >
+              {t.labels.flyer}
+              <input
+                type="file"
+                name="flyer"
+                accept=".pdf,image/*"
+                onChange={(e) => setFileName(e.target.files?.[0]?.name || "")}
+              />
+            </label>
+
+            <p>{fileName || t.labels.filename}</p>
+          </div>
         </fieldset>
         {/* .form-group */}
-
-        {/* FLYER */}
-        <div className="flyer">
-          <label
-            className={`file-btn ${
-              validationErrors?.flyer === "file_too_large" ||
-              validationErrors?.flyer === "invalid_file_type"
-                ? "input-error"
-                : ""
-            }`}
-          >
-            {t.labels.flyer}
-            <input
-              type="file"
-              name="flyer"
-              accept=".pdf,image/*"
-              onChange={(e) => setFileName(e.target.files?.[0]?.name || "")}
-            />
-          </label>
-
-          <p>{fileName || t.labels.filename}</p>
-        </div>
 
         {/* KONSENT */}
         <div className="consent">
@@ -156,14 +167,6 @@ export default function EventSubmissionForm({ language }) {
             {t.labels.checkbox}
           </label>
         </div>
-        {validationErrors && Object.keys(validationErrors).length > 0 && (
-          <p className="error-message">
-            {Object.values(validationErrors).map((err) => {
-              console.log(e[err]);
-              return <li key={err}>{e[err]}</li>;
-            })}
-          </p>
-        )}
 
         <div className="honeypot" aria-hidden="true">
           <label htmlFor="contactPerson">Company</label>

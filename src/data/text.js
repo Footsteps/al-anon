@@ -53,7 +53,7 @@ export const text = {
     } /*events*/,
     contact: {
       submitText: "Vielen Dank für deine Nachricht!",
-      text: "Hier ist Platz für Nachrichten oder Infos über Roundups :) Bei Infos über Roundups ist es nötig, entweder eine Email-Adresse ODER eine Webseite ODER einen Flyer anzugeben. Oder Du schreibst mir nur eine Nachricht. :)",
+      text: "Hier ist Platz für Nachrichten oder Infos über Roundups :) Bei Infos über Roundups ist es nötig, den Veranstaltungsnamen, und entweder eine Email-Adresse ODER eine Webseite ODER einen Flyer anzugeben. Oder Du schreibst mir nur eine Nachricht. :)",
       labels: {
         message: "Deine Nachricht",
         email: "Deine Email-Adresse (optional)",
@@ -71,7 +71,7 @@ export const text = {
           "both": "Deutsch & Englisch", 
           "other": "Andere Sprache"},
         eventEmail: "Email des Events",
-        website: "Webseite",
+        website: "Webseite (beginnend mit https://",
         flyer: "Flyer (PDF oder Bild) hochladen",
         filename: "Keine Datei beigefügt",
         checkbox: "Ich bin damit einverstanden, dass die übermittelten Daten ggf. zur Veröffentlichung der Veranstaltung verarbeitet werden.",
@@ -172,7 +172,7 @@ export const text = {
     } /*events*/,
     contact: {
       submitText: "Thank you for your message!",
-      text: "Here is a place for messages or information about Roundups :) When providing information about roundups, you'll have to provide either an event email address OR a website OR a flyer. Or you just leave a message :)",
+      text: "Here is a place for messages or information about Roundups :) When sending information about roundups, you'll have to provide an event title plus either an event email address OR a website OR a flyer. Or you just leave a message :)",
       labels: {
         message: "Your message",
         email: "Your Email address (optional)",
@@ -190,7 +190,7 @@ export const text = {
           "both": "English & German", 
           "other": "Other language"},
         eventEmail: "Email of the event (optional)",
-        website: "Website (optional)",
+        website: "Website (optional, starting with https://)",
         flyer: "Flyer (upload PDF or image)",
         filename: "No file attached",
         checkbox: "I agree that the submitted information may be processed for publication of the event.",
