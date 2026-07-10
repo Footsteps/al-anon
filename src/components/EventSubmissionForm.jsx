@@ -6,7 +6,7 @@ import { useFocusFirstError } from "../hooks/useFocusFirstError.js";
 import { ValidationErrors } from "./ValidationErrors.jsx";
 import { EventDetails } from "./EventDetails.jsx";
 
-import {useRef, useEffect} from "react";
+import { useRef, useEffect } from "react";
 
 export default function EventSubmissionForm({ language }) {
   const t = text[language].contact;
@@ -19,7 +19,7 @@ export default function EventSubmissionForm({ language }) {
     setFileName,
     handleSubmit,
     clearFieldError,
-    isSubmitting
+    isSubmitting,
   } = useContactForm(language);
 
   function handleFieldChange(e) {
@@ -27,16 +27,22 @@ export default function EventSubmissionForm({ language }) {
   }
 
   const successRef = useRef(null);
-  
+
   useEffect(() => {
-    if(submitted) successRef.current?.focus();
-  }, [submitted])
+    if (submitted) successRef.current?.focus();
+  }, [submitted]);
 
   useFocusFirstError(validationErrors);
 
   if (submitted) {
     return (
-      <section className="submit-section" ref={successRef} tabIndex={-1}>
+      <section
+        className="submit-section"
+        ref={successRef}
+        tabIndex={-1}
+        role="status"
+        aria-live="polite"
+      >
         <p className="section-card info-card">{t.submitText} </p>
       </section>
     );
@@ -58,7 +64,16 @@ export default function EventSubmissionForm({ language }) {
           placeholder={t.labels.message}
           className={validationErrors?.message ? "input-error" : ""}
           onChange={handleFieldChange}
+          aria-invalid={!!validationErrors?.message}
+          aria-describedby={
+            validationErrors?.message ? "message-error" : undefined
+          }
         />
+        {validationErrors?.message && (
+          <p id="message-error" className="sr-only">
+            {e[validationErrors?.message]}
+          </p>
+        )}
 
         {/* EMAIL */}
         <label htmlFor="email">{t.labels.email}</label>
@@ -68,6 +83,7 @@ export default function EventSubmissionForm({ language }) {
           fileName={fileName}
           setFileName={setFileName}
           t={t}
+          e={e}
           validationErrors={validationErrors}
           clearFieldError={clearFieldError}
         />
@@ -80,7 +96,16 @@ export default function EventSubmissionForm({ language }) {
             id="consent"
             onChange={handleFieldChange}
             required
+            aria-invalid={!!validationErrors?.consent}
+            aria-describedby={
+              validationErrors?.consent ? "consent-error" : undefined
+            }
           />
+          {validationErrors?.consent && (
+            <p id="consent-error" className="sr-only">
+              {e[validationErrors?.consent]}
+            </p>
+          )}
           <label className="section-card" htmlFor="consent">
             {t.labels.checkbox}
           </label>
@@ -97,7 +122,12 @@ export default function EventSubmissionForm({ language }) {
           />
         </div>
 
-        <button type="submit" value="Submit" className="form-submit-btn" disabled={isSubmitting}>
+        <button
+          type="submit"
+          value="Submit"
+          className="form-submit-btn"
+          disabled={isSubmitting}
+        >
           {isSubmitting ? t.labels.sending : t.labels.submit}
         </button>
       </fieldset>

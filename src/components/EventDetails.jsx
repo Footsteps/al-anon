@@ -1,5 +1,11 @@
-export function EventDetails({ validationErrors, t, fileName, setFileName, clearFieldError }) {
-
+export function EventDetails({
+  validationErrors,
+  e,
+  t,
+  fileName,
+  setFileName,
+  clearFieldError,
+}) {
   return (
     <>
       {/* NAME */}
@@ -10,7 +16,14 @@ export function EventDetails({ validationErrors, t, fileName, setFileName, clear
         id="title"
         className={validationErrors?.title ? "input-error" : ""}
         onChange={() => clearFieldError("title")}
+        aria-invalid={!!validationErrors?.title}
+        aria-describedby={validationErrors?.title ? "title-error" : undefined}
       />
+      {validationErrors?.title && (
+        <p id="title-error" className="sr-only">
+          {e[validationErrors?.title]}
+        </p>
+      )}
 
       {/* DATUM */}
       <div className="grid-2-container">
@@ -57,7 +70,16 @@ export function EventDetails({ validationErrors, t, fileName, setFileName, clear
       <fieldset
         tabIndex={-1}
         className={`form-group ${validationErrors?.hasContactInformation ? "form-group-error" : ""}`}
+        role="group"
+        aria-describedby={
+          validationErrors?.hasContactInformation ? "contact-error" : undefined
+        }
       >
+        {validationErrors?.hasContactInformation && (
+          <p id="contact-error" className="sr-only">
+            {e[validationErrors?.hasContactInformation]}
+          </p>
+        )}
         <legend className="sr-only">{t.labels.flyer}</legend>
 
         {/* EMAIL EVENT */}
@@ -84,7 +106,19 @@ export function EventDetails({ validationErrors, t, fileName, setFileName, clear
               name="flyer"
               accept=".pdf,image/*"
               onChange={(e) => setFileName(e.target.files?.[0]?.name || "")}
+              aria-invalid={
+                validationErrors?.flyer === "file_too_large" ||
+                validationErrors?.flyer === "invalid_file_type"
+              }
+              aria-describedby={
+                validationErrors?.flyer ? "flyer-error" : undefined
+              }
             />
+            {validationErrors?.flyer && (
+    <p id="flyer-error" className="sr-only">
+        {e[validationErrors.flyer]}
+    </p>
+)}
           </label>
 
           <p>{fileName || t.labels.filename}</p>
