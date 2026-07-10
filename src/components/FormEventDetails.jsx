@@ -115,10 +115,10 @@ export function EventDetails({
               }
             />
             {validationErrors?.flyer && (
-    <p id="flyer-error" className="sr-only">
-        {e[validationErrors.flyer]}
-    </p>
-)}
+              <p id="flyer-error" className="sr-only">
+                {e[validationErrors.flyer]}
+              </p>
+            )}
           </label>
 
           <p>{fileName || t.labels.filename}</p>

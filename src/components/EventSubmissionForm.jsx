@@ -4,9 +4,13 @@ import { errorMessages } from "../data/errorMessages.js";
 import { useContactForm } from "../hooks/useContactForm.js";
 import { useFocusFirstError } from "../hooks/useFocusFirstError.js";
 import { ValidationErrors } from "./ValidationErrors.jsx";
-import { EventDetails } from "./EventDetails.jsx";
+import { EventDetails } from "./FormEventDetails.jsx";
+import { FormMessageFields } from "./FormMessageFields.jsx";
+import { FormConsentCheckbox } from "./FormConsentCheckbox.jsx";
 
 import { useRef, useEffect } from "react";
+import { Form } from "react-router-dom";
+
 
 export default function EventSubmissionForm({ language }) {
   const t = text[language].contact;
@@ -55,29 +59,8 @@ export default function EventSubmissionForm({ language }) {
       <p className="section-card info-card">{t.text}</p>
 
       <fieldset className="form-group">
-        {/* NACHRICHT */}
-        <legend className="sr-only">{t.labels.message}</legend>
-        <textarea
-          id="message"
-          name="message"
-          rows="8"
-          placeholder={t.labels.message}
-          className={validationErrors?.message ? "input-error" : ""}
-          onChange={handleFieldChange}
-          aria-invalid={!!validationErrors?.message}
-          aria-describedby={
-            validationErrors?.message ? "message-error" : undefined
-          }
-        />
-        {validationErrors?.message && (
-          <p id="message-error" className="sr-only">
-            {e[validationErrors?.message]}
-          </p>
-        )}
-
-        {/* EMAIL */}
-        <label htmlFor="email">{t.labels.email}</label>
-        <input type="email" name="email" id="email" />
+        
+        <FormMessageFields e={e} t={t} validationErrors={validationErrors} handleFieldChange={handleFieldChange}/>
 
         <EventDetails
           fileName={fileName}
@@ -88,28 +71,7 @@ export default function EventSubmissionForm({ language }) {
           clearFieldError={clearFieldError}
         />
 
-        {/* KONSENT */}
-        <div className="consent">
-          <input
-            type="checkbox"
-            name="consent"
-            id="consent"
-            onChange={handleFieldChange}
-            required
-            aria-invalid={!!validationErrors?.consent}
-            aria-describedby={
-              validationErrors?.consent ? "consent-error" : undefined
-            }
-          />
-          {validationErrors?.consent && (
-            <p id="consent-error" className="sr-only">
-              {e[validationErrors?.consent]}
-            </p>
-          )}
-          <label className="section-card" htmlFor="consent">
-            {t.labels.checkbox}
-          </label>
-        </div>
+<FormConsentCheckbox handleFieldChange={handleFieldChange} validationErrors = {validationErrors} e={e} t={t}/>
 
         <div className="honeypot" aria-hidden="true">
           <label htmlFor="contactPerson">Company</label>
