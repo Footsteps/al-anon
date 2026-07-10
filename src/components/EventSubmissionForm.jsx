@@ -2,19 +2,22 @@ import { useState } from "react";
 import { text } from "../data/text.js";
 import { errorMessages } from "../data/errorMessages.js";
 import { contactService } from "../services/contactService.js";
-import {useFocusFirstError} from "../hooks/useFocusFirstError.jsx"
+import {useFocusFirstError} from "../hooks/useFocusFirstError.js"
+import {ValidationErrors} from "./ValidationErrors.jsx";
 
 export default function EventSubmissionForm({ language }) {
   const [submitted, setSubmitted] = useState(false);
   const [fileName, setFileName] = useState("");
+  const [validationErrors, setValidationErrors] = useState();
+
   const t = text[language].contact;
   const e = errorMessages[language];
-  const [validationErrors, setValidationErrors] = useState();
+  
 
   useFocusFirstError(validationErrors);
   
   async function handleSubmit(e) {
-    setValidationErrors({});
+    
     e.preventDefault();
 
     const form = e.currentTarget;
@@ -27,7 +30,6 @@ export default function EventSubmissionForm({ language }) {
         setValidationErrors(result.errors);
         return;
       }
-
       setValidationErrors({});
       setSubmitted(true);
       setFileName("");
@@ -47,15 +49,11 @@ export default function EventSubmissionForm({ language }) {
 
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data">
-      {validationErrors && Object.keys(validationErrors).length > 0 && (
-        <ul className="error-message">
-          {Object.values(validationErrors).map((err) => (
-           <li key={err}>{e[err]}</li>
-          ))}
-        </ul>
-      )}
+      
+      <ValidationErrors errors={validationErrors} messages={e} />
 
       <p className="section-card info-card">{t.text}</p>
+
       <fieldset className="form-group">
         {/* NACHRICHT */}
         <legend className="sr-only">{t.labels.message}</legend>
