@@ -36,7 +36,7 @@ export default function EventSubmissionForm({ language }) {
 
   if (submitted) {
     return (
-      <section className="submit-section" ref={successRef}>
+      <section className="submit-section" ref={successRef} tabIndex={-1}>
         <p className="section-card info-card">{t.submitText} </p>
       </section>
     );
