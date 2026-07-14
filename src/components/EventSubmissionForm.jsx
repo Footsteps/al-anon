@@ -9,7 +9,6 @@ import { FormMessageFields } from "./FormMessageFields.jsx";
 import { FormConsentCheckbox } from "./FormConsentCheckbox.jsx";
 
 import { useRef, useEffect } from "react";
-import { Form } from "react-router-dom";
 
 
 export default function EventSubmissionForm({ language }) {

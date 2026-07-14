@@ -183,7 +183,7 @@ export const text = {
         city: "City",
         address: "Address",
         organizer: "Which program is hosting?",
-        language: "Sprache Roundup",
+        language: "Language Roundup",
         option: "Please choose",
         value: {
           "de": "German", 

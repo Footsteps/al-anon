@@ -548,6 +548,10 @@ address {
     width: 440px;
   }
 
+  .event-card a {
+    font-size: 2rem;
+  }
+
   /*FOOTER*/
 
   footer {
@@ -575,3 +579,30 @@ address {
   }
 }
 
+@media (min-width: 1621px) {
+  .home-container {
+    grid-template-columns:1fr 3fr 3fr 3fr 1fr;
+    row-gap: 5rem;
+    grid-template-areas: 
+    ". welcome welcome welcome ."
+    ". meetings newcomer conventions ." 
+  }
+
+  section.welcome {
+    grid-area: welcome;
+    max-width: 100%;
+    padding: 2% 10%;
+  }
+
+  .newcomer {
+    grid-area: newcomer;
+  }
+
+  .home-container section.meetings {
+    grid-area: meetings;
+  }
+
+  .home-container section.conventions {
+    grid-area: conventions;
+  }
+}
