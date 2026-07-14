@@ -15,7 +15,7 @@ export const text = {
 
       welcome: {
         heading: "Willkommen!",
-        text: "Diese Seite ist privat. Sie sammelt Infos über Conventions. Meldet Euch gern, wenn ihr was habt! Außerdem kann die offizielle Al-Anon Seite al-anon.de (noch) kein Englisch, und hier springt diese Seite mit einem Überblick über alle englischsprachigen Al-Anon Meetings in Berlin ein.",
+        text: "Diese Seite ist privat - sie ist KEINE offizielle Website von Al-Anon. Sie sammelt Infos über Conventions. Meldet Euch gern, wenn ihr was habt! Außerdem kann die offizielle Al-Anon Seite al-anon.de (noch) kein Englisch, und hier springt diese Seite mit einem Überblick über alle englischsprachigen Al-Anon Meetings in Berlin ein.",
       },
 
       newcomer: {
@@ -71,7 +71,7 @@ export const text = {
           "both": "Deutsch & Englisch", 
           "other": "Andere Sprache"},
         eventEmail: "Email des Events",
-        website: "Webseite (beginnend mit https://",
+        website: "Webseite (beginnend mit https)",
         flyer: "Flyer (PDF oder Bild) hochladen",
         filename: "Keine Datei beigefügt",
         checkbox: "Ich bin damit einverstanden, dass die übermittelten Daten ggf. zur Veröffentlichung der Veranstaltung verarbeitet werden.",
@@ -135,7 +135,7 @@ export const text = {
 
       welcome: {
         heading: "Welcome!",
-        text: "This is a personal page. It collects information about conventions. Please feel free to contact me if you have any! Also, the official German Al-Anon website isn't available in English (yet), so this site fills that gap and gives an overview of all the English speaking Al-Anon meetings in Berlin.",
+        text: "This is a personal page - NOT an official website of Al-Anon. It collects information about conventions. Please feel free to contact me if you have any! Also, the official German Al-Anon website isn't available in English (yet), so this site fills that gap and gives an overview of all the English speaking Al-Anon meetings in Berlin.",
       },
 
       newcomer: {
@@ -191,7 +191,7 @@ export const text = {
           "both": "English & German", 
           "other": "Other language"},
         eventEmail: "Email of the event (optional)",
-        website: "Website (optional, starting with https://)",
+        website: "Website (optional, starting with https)",
         flyer: "Flyer (upload PDF or image)",
         filename: "No file attached",
         checkbox: "I agree that the submitted information may be processed for publication of the event.",
