@@ -6,7 +6,7 @@ import {text} from "../data/text.js";
 export default function NavBar({ language, setLanguage, isMobile}) {
   const t = text[language].navbar;
   return (
-    <nav aria-label="Main navigation">
+    <nav aria-label="Hauptnavigation">
       <LanguageSwitcher
         language={language}
         setLanguage={setLanguage}
@@ -44,7 +44,7 @@ export default function NavBar({ language, setLanguage, isMobile}) {
         aria-label={t.contact}
       >
         {isMobile ? (
-          <img className="icon" src={ContactIcon} alt="" />
+          <img className="icon" src={ContactIcon} alt="" aria-hidden="true"/>
         ) : (
           `${t.contact}`
         )}

@@ -1,10 +1,10 @@
-import {text} from "../data/text.js";
+import { text } from "../data/text.js";
 
 export default function Home({ language, isMobile }) {
   const t = text[language].home;
 
   return (
-    <main>
+    <main id="main-content">
       <h1>{t.title[isMobile ? "isMobile" : "isDesktop"]}</h1>
       <div className="home-container">
         <section className=" section-card welcome">
@@ -17,35 +17,29 @@ export default function Home({ language, isMobile }) {
               ☆
             </span>
           </h2>
-          <p>{t.welcome.text}
-            </p>
+          <p>{t.welcome.text}</p>
         </section>
         <section className="section-card newcomer">
           <h2>{t.newcomer.heading}</h2>
 
           <p>
-                {t.newcomer.text}{" "}
-                <a
-                  href={t.link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t.link.text}  
-                </a>.
+            {t.newcomer.text}{" "}
+            <a href={t.link.href} target="_blank" rel="noopener noreferrer" aria-label={`${t.link.text} (öffnet in neuem Tab)`}
+>
+              {t.link.text}
+            </a>
+            .
           </p>
         </section>
         <section className="meetings section-card">
           <h2>{t.meetings.heading}</h2>
           <p>
-                {t.meetings.text}{" "}
-                <a
-                  href={t.link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t.link.text}
-                </a>
-                .
+            {t.meetings.text}{" "}
+            <a href={t.link.href} target="_blank" rel="noopener noreferrer" aria-label={`${t.link.text} (öffnet in neuem Tab)`}
+>
+              {t.link.text}
+            </a>
+            .
           </p>
         </section>
         <section className="conventions section-card">

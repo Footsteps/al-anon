@@ -128,6 +128,21 @@ p {
   line-height: 1.5;
 }
 
+/**SKIP LINK**/
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+
+  background: white;
+  padding: .75rem 1rem;
+  z-index: 1000;
+}
+
 /*** HEADER ***/
 header {
   padding: 1em;

@@ -6,7 +6,7 @@ export default function Events({ language }) {
   const eventsText = text[language].events.text;
 
   return (
-    <main className="events-main">
+    <main className="events-main" id="main-content">
       <section className="section-card info-card">
         <p>{eventsText}</p>
       </section>

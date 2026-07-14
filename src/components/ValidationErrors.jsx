@@ -6,7 +6,7 @@ export function ValidationErrors({errors, messages}) {
     const uniqueErrors = [...new Set(Object.values(errors))];
 
     return (
-        <ul className="error-message">
+        <ul className="error-message" role="alert" aria-live="assertive">
           {uniqueErrors.map((err) => (
            <li key={err}>{messages[err]}</li>
           ))}
