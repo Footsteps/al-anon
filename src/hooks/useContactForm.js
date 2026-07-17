@@ -3,6 +3,7 @@ import { contactService } from "../services/contactService.js";
 
 export function useContactForm(language) {
     const [submitted, setSubmitted] = useState(false);
+    const [submitCount, setSubmitCount] = useState(0);
     const [validationErrors, setValidationErrors] = useState({});
     const [fileName, setFileName] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,6 +22,7 @@ export function useContactForm(language) {
     
           if (!result.success) {
             setValidationErrors(result.errors);
+            setSubmitCount(count => count + 1);
             return;
           }
           setValidationErrors({});
@@ -48,6 +50,7 @@ export function useContactForm(language) {
 
       return {
         submitted, 
+        submitCount,
         validationErrors,
         fileName,
         setFileName, 

@@ -71,7 +71,6 @@ export function EventDetails({
         id="contact-information"
         tabIndex={-1}
         className={`form-group ${validationErrors?.hasContactInformation ? "form-group-error" : ""}`}
-        role="group"
         aria-describedby={
           validationErrors?.hasContactInformation ? "contact-error" : undefined
         }

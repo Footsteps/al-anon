@@ -10,7 +10,7 @@ import { FormConsentCheckbox } from "./FormConsentCheckbox.jsx";
 import Honeypot from "./Honeypot.jsx";
 
 import { useContactForm } from "../hooks/useContactForm.js";
-import { useFocusFirstError } from "../hooks/useFocusFirstError.js";
+import { useFocusErrorMessage } from "../hooks/useFocusErrorMessage.js";
 
 export default function EventSubmissionForm({ language }) {
   const t = text[language].contact;
@@ -18,6 +18,7 @@ export default function EventSubmissionForm({ language }) {
 
   const {
     submitted,
+    submitCount,
     validationErrors,
     fileName,
     setFileName,
@@ -31,12 +32,15 @@ export default function EventSubmissionForm({ language }) {
   }
 
   const successRef = useRef(null);
+  const errorSummaryRef = useRef(null);
 
   useEffect(() => {
-    if (submitted) successRef.current?.focus();
+    if (submitted) {
+      successRef.current?.focus();
+    } 
   }, [submitted]);
 
-  useFocusFirstError(validationErrors);
+  useFocusErrorMessage(validationErrors, errorSummaryRef, submitCount);
 
   if (submitted) {
     return (
@@ -54,7 +58,7 @@ export default function EventSubmissionForm({ language }) {
 
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data">
-      <ValidationErrors errors={validationErrors} messages={e} />
+      <ValidationErrors ref={errorSummaryRef} errors={validationErrors} messages={e} submitCount={submitCount}/>
 
       <p className="section-card info-card">{t.text}</p>
 
