@@ -23,6 +23,11 @@ button,
   padding: 0.8em;
 }
 
+.nav-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
 /*language switcher & contact button*/
 .round-btn {
   height: 32px;

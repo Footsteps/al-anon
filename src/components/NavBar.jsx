@@ -6,7 +6,7 @@ import {text} from "../data/text.js";
 export default function NavBar({ language, setLanguage, isMobile}) {
   const t = text[language].navbar;
   return (
-    <nav aria-label="Hauptnavigation">
+    <nav>
       <LanguageSwitcher
         language={language}
         setLanguage={setLanguage}
