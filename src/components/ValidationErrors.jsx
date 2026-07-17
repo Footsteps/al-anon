@@ -1,3 +1,4 @@
+
 export function ValidationErrors({errors, messages}) {
     if(!errors || Object.keys(errors).length === 0) {
         return null;
@@ -15,7 +16,7 @@ export function ValidationErrors({errors, messages}) {
     return (
         <ul className="error-message" role="alert" aria-live="assertive">
           <h3>
-            Bitte noch korrigieren:
+            {messages.heading}
           </h3>
           {uniqueErrors.map((err) => (
            <li key={err}>

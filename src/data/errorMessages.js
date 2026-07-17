@@ -1,5 +1,6 @@
 export const errorMessages = {
   de: {
+    heading: "Oh! Es fehlt noch:",
     message_required: "Bitte gib eine Nachricht ein.",
     consent_required: "Bitte stimm' der Datenschutzerklärung zu.",
     title_required: "Bitte gib einen Veranstaltungstitel an.",
@@ -10,6 +11,7 @@ export const errorMessages = {
     invalid_file_type: "Bitte lade eine PDF-, JPG-, PNG- oder WEBP-Datei hoch."
   },
   en: {
+    heading: "Ups! That hasn't worked yet:",
     message_required: "Please leave a message.",
     consent_required: "Please agree to the privacy policy.",
     title_required: "Please provide an event title.",
