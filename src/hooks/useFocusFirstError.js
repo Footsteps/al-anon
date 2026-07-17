@@ -3,8 +3,9 @@ import { useEffect } from "react";
 const FIELD_ORDER = ["message", "title", "hasContactInformation", "consent"];
 
 export function useFocusFirstError(validationErrors) {
+  console.log(validationErrors);
     useEffect(() => {
-        if (!validationErrors || Object.keys(validationErrors.length === 0)) return;
+        if (!validationErrors || Object.keys(validationErrors).length === 0) return;
     
         const firstError = FIELD_ORDER.find((field) => validationErrors[field]);
         if (!firstError) return;

@@ -68,6 +68,7 @@ export function EventDetails({
       </div>
 
       <fieldset
+        id="contact-information"
         tabIndex={-1}
         className={`form-group ${validationErrors?.hasContactInformation ? "form-group-error" : ""}`}
         role="group"
