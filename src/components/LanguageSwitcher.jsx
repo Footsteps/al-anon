@@ -1,11 +1,11 @@
 import Tooltip from "./Tooltip.jsx";
 import {text} from "../data/text.js";
 
-function LanguageSwitcher({ language, setLanguage, isMobile }) {
+function LanguageSwitcher({ language, setLanguage, isMobile}) {
 const t = text[language].languageSwitcher;
 
   return (
-    <div role="group" aria-label={t.ariaLabel}>
+    <div>
     <Tooltip text={t.tooltip}>
           <button
             type="button"
@@ -16,8 +16,8 @@ const t = text[language].languageSwitcher;
               : setLanguage("en");
               e.currentTarget.blur();
             }}
-            lang={language === "de" ? "de" : "en"}
-            aria-pressed={language === t.ariaPressed}
+            lang={language === "de" ? "en" : "de"}
+            aria-label={t.ariaLabel}
           >
             {isMobile ? t.switch.mobile : t.switch.desktop}
           </button>

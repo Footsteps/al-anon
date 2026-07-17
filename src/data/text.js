@@ -1,5 +1,3 @@
-import LanguageSwitcher from "../components/LanguageSwitcher";
-
 export const text = {
   de: {
     navbar: {
@@ -12,8 +10,7 @@ export const text = {
         desktop: "Switch Language",
         mobile: "EN"
       },
-      ariaLabel: "Sprachauswahl",
-      ariaPressed: "de"
+      ariaLabel: "Switch Language to English",
     },
 
     home: {
@@ -141,7 +138,7 @@ export const text = {
         desktop: "Sprache wechseln",
         mobile: "DE"
       }, 
-      ariaLabel: "Language selection",
+      ariaLabel: "Sprache auf Deutsch umstellen",
       ariaPressed: "en"
     },
     home: {

@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { cloneElement, useId, useState } from "react";
 
 export default function Tooltip({ text, children }) {
   const [visible, setVisible] = useState(false);
+  const tooltipId = useId();
+
+  const child = cloneElement(children, {
+    "aria-describedby" : visible ? tooltipId : undefined
+  })
 
   return (
-    <div className="tooltip-container"
+    <div
+      className="tooltip-container"
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
       onFocus={() => setVisible(true)}
@@ -13,7 +19,11 @@ export default function Tooltip({ text, children }) {
       {children}
 
       {visible && (
-        <div className="tooltip">
+        <div
+          className="tooltip"
+          id={tooltipId}
+          role="tooltip"
+        >
           {text}
         </div>
       )}
