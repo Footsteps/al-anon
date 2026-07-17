@@ -1,8 +1,19 @@
+import LanguageSwitcher from "../components/LanguageSwitcher";
+
 export const text = {
   de: {
     navbar: {
       home: "Start",
       contact: "Kontakt",
+    },
+    languageSwitcher: {
+      tooltip: "Switch language: english",
+      switch: {
+        desktop: "Switch Language",
+        mobile: "EN"
+      },
+      ariaLabel: "Sprachauswahl",
+      ariaPressed: "de"
     },
 
     home: {
@@ -124,7 +135,15 @@ export const text = {
       home: "Home",
       contact: "Contact",
     },
-
+    languageSwitcher: {
+      tooltip: "Sprache wechseln: deutsch",
+      switch: {
+        desktop: "Sprache wechseln",
+        mobile: "DE"
+      }, 
+      ariaLabel: "Language selection",
+      ariaPressed: "en"
+    },
     home: {
       title: {
         mobile:

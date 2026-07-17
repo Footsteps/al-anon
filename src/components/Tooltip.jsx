@@ -7,6 +7,8 @@ export default function Tooltip({ text, children }) {
     <div className="tooltip-container"
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
+      onFocus={() => setVisible(true)}
+      onBlur={() => setVisible(false)}
     >
       {children}
 

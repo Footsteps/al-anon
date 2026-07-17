@@ -1,40 +1,27 @@
 import Tooltip from "./Tooltip.jsx";
+import {text} from "../data/text.js";
 
 function LanguageSwitcher({ language, setLanguage, isMobile }) {
+const t = text[language].languageSwitcher;
 
   return (
-    <div aria-label="Language switcher">
-      {language === "en" ? (
-        <Tooltip text="Sprache wechseln: deutsch">
+    <div role="group" aria-label={t.ariaLabel}>
+    <Tooltip text={t.tooltip}>
           <button
             type="button"
             className={`border ${isMobile ? "round-btn" : ""}`}
             onClick={(e) => {
-              setLanguage("de");
+              language === "en" ?
+              setLanguage("de")  
+              : setLanguage("en");
               e.currentTarget.blur();
             }}
-            lang="de"
-            aria-pressed={language === "de"}
+            lang={language === "de" ? "de" : "en"}
+            aria-pressed={language === t.ariaPressed}
           >
-            {isMobile ? "DE" : "Sprache wechseln"}
+            {isMobile ? t.switch.mobile : t.switch.desktop}
           </button>
         </Tooltip>
-      ) : (
-        <Tooltip text="Switch language: english">
-          <button
-            type="button"
-            className={`border ${isMobile ? "round-btn" : ""}`}
-            onClick={(e) => {
-              setLanguage("en");
-              e.currentTarget.blur();
-            }}
-            lang="en"
-            aria-pressed={language === "en"}
-          >
-            {isMobile ? "EN" : "Switch Language"}
-          </button>
-        </Tooltip>
-      )}
     </div>
   );
 }
