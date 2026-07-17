@@ -1,15 +1,16 @@
+import { useRef, useEffect } from "react";
+
 import { text } from "../data/text.js";
 import { errorMessages } from "../data/errorMessages.js";
 
-import { useContactForm } from "../hooks/useContactForm.js";
-import { useFocusFirstError } from "../hooks/useFocusFirstError.js";
 import { ValidationErrors } from "./ValidationErrors.jsx";
 import { EventDetails } from "./FormEventDetails.jsx";
 import { FormMessageFields } from "./FormMessageFields.jsx";
 import { FormConsentCheckbox } from "./FormConsentCheckbox.jsx";
+import Honeypot from "./Honeypot.jsx";
 
-import { useRef, useEffect } from "react";
-
+import { useContactForm } from "../hooks/useContactForm.js";
+import { useFocusFirstError } from "../hooks/useFocusFirstError.js";
 
 export default function EventSubmissionForm({ language }) {
   const t = text[language].contact;
@@ -25,8 +26,8 @@ export default function EventSubmissionForm({ language }) {
     isSubmitting,
   } = useContactForm(language);
 
-  function handleFieldChange(e) {
-    clearFieldError(e.target.name);
+  function handleFieldChange(event) {
+    clearFieldError(event.target.name);
   }
 
   const successRef = useRef(null);
@@ -58,8 +59,12 @@ export default function EventSubmissionForm({ language }) {
       <p className="section-card info-card">{t.text}</p>
 
       <fieldset className="form-group">
-        
-        <FormMessageFields e={e} t={t} validationErrors={validationErrors} handleFieldChange={handleFieldChange}/>
+        <FormMessageFields
+          e={e}
+          t={t}
+          validationErrors={validationErrors}
+          handleFieldChange={handleFieldChange}
+        />
 
         <EventDetails
           fileName={fileName}
@@ -70,18 +75,14 @@ export default function EventSubmissionForm({ language }) {
           clearFieldError={clearFieldError}
         />
 
-<FormConsentCheckbox handleFieldChange={handleFieldChange} validationErrors = {validationErrors} e={e} t={t}/>
+        <FormConsentCheckbox
+          handleFieldChange={handleFieldChange}
+          validationErrors={validationErrors}
+          e={e}
+          t={t}
+        />
 
-        <div className="honeypot" aria-hidden="true">
-          <label htmlFor="contactPerson">Company</label>
-          <input
-            type="text"
-            id="contactPerson"
-            name="contactPerson"
-            autoComplete="off"
-            tabIndex="-1"
-          />
-        </div>
+        <Honeypot />
 
         <button
           type="submit"

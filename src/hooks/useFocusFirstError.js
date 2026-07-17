@@ -4,7 +4,7 @@ const FIELD_ORDER = ["message", "title", "hasContactInformation", "consent"];
 
 export function useFocusFirstError(validationErrors) {
     useEffect(() => {
-        if (!validationErrors) return;
+        if (!validationErrors || Object.keys(validationErrors.length === 0)) return;
     
         const firstError = FIELD_ORDER.find((field) => validationErrors[field]);
         if (!firstError) return;
