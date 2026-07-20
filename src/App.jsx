@@ -10,10 +10,12 @@ import Privacy from "./pages/Privacy.jsx";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+const MOBILE_BREAKPOINT = 768;
+
+
 export default function App() {
   const pathname = useLocation().pathname;
   const [language, setLanguage] = useState("en");
-  const MOBILE_BREAKPOINT = 768;
   const [isMobile, setIsMobile] = useState(
     () => window.innerWidth <= MOBILE_BREAKPOINT,
   );
@@ -28,9 +30,12 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const main = document.getElementById("main-content");
-    main?.focus();
-  }, [pathname])
+    document.getElementById("main-content")?.focus();
+  }, [pathname]);
+
+  useEffect(() => {
+  document.documentElement.lang = language;
+}, [language]);
 
   return (
     <div className={`app-container ${pathname.slice(1) || "home"}`}>
@@ -48,7 +53,7 @@ export default function App() {
           element={<Home language={language} isMobile={isMobile} />}
         />
         <Route path="/meetings" element={<Meetings language={language} />} />
-        <Route path="/events" element={<Events language={language} />} />
+        <Route path="/roundups" element={<Events language={language} />} />
         <Route path="/contact" element={<Contact language={language} />} />
         <Route path="/impressum" element={<Impressum language={language} />} />
         <Route path="/privacy" element={<Privacy language={language} />} />

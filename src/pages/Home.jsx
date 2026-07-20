@@ -1,9 +1,13 @@
 import { text } from "../data/text.js";
+import SEO from "../components/SEO.jsx";
+import {seo} from "../data/seo.js"
 
 export default function Home({ language, isMobile }) {
   const t = text[language].home;
 
   return (
+    <>
+    <SEO {...seo.home}/>
     <main id="main-content" tabIndex={-1}>
       <h1>{t.title[isMobile ? "isMobile" : "isDesktop"]}</h1>
       <div className="home-container">
@@ -48,5 +52,6 @@ export default function Home({ language, isMobile }) {
         </section>
       </div>
     </main>
+    </>
   );
 }

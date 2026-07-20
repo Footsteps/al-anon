@@ -1,7 +1,12 @@
 import { meetings as m } from "../data/meetings.js";
 import { Fragment } from "react";
+import SEO from "../components/SEO.jsx";
+import {seo} from "../data/seo.js"
+
 export default function Meetings({ language }) {
   return (
+    <>
+  <SEO {...seo.meetings}/>
     <main className="main-meetings" id="main-content" tabIndex={-1}>
       <section id="meetings" className="section-card info-card">
         <h2>{m.info[language].heading}</h2>
@@ -31,5 +36,6 @@ export default function Meetings({ language }) {
           ))}
       </section>
     </main>
+    </>
   );
 }
