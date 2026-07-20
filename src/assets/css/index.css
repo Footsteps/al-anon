@@ -24,6 +24,11 @@
   box-sizing: border-box;
 }
 
+#main-content:focus {
+  outline: none;
+}
+
+
 html {
   /*10px as default size. browser is 16px --> then, 1rem is 10px*/
   font-size: 62.5%;
