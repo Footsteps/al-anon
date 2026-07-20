@@ -23,7 +23,7 @@ export function FormMessageFields({e, t, validationErrors, handleFieldChange}) {
     
             {/* EMAIL */}
             <label htmlFor="email">{t.labels.email}</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" autoComplete="email"/>
     
     </>
  )   

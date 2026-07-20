@@ -40,17 +40,27 @@ export function EventDetails({
 
       {/* ORT */}
       <label htmlFor="city">{t.labels.city}</label>
-      <input type="text" name="city" id="city" />
+      <input type="text" name="city" id="city" autoComplete="address-level2" />
 
       {/* ADRESSE */}
       <label htmlFor="address">{t.labels.address}</label>
-      <input type="text" name="address" id="address" />
+      <input
+        type="text"
+        name="address"
+        id="address"
+        autoComplete="street-address"
+      />
 
       <div className="grid-2-container">
         {/* ORGANIZER */}
         <div>
           <label htmlFor="organizer">{t.labels.organizer}</label>
-          <input type="text" name="organizer" id="organizer" />
+          <input
+            type="text"
+            name="organizer"
+            id="organizer"
+            autoComplete="organization"
+          />
         </div>
 
         {/* SPRACHE */}
@@ -84,11 +94,16 @@ export function EventDetails({
 
         {/* EMAIL EVENT */}
         <label htmlFor="event-email">{t.labels.eventEmail}</label>
-        <input type="email" name="event-email" id="event-email" />
+        <input
+          type="email"
+          name="event-email"
+          id="event-email"
+          autoComplete="email"
+        />
 
         {/* WEBSITE */}
         <label htmlFor="website">{t.labels.website}</label>
-        <input type="url" name="website" id="website" />
+        <input type="url" name="website" id="website" autoComplete="url" />
 
         {/* FLYER */}
         <div className="flyer">
@@ -113,6 +128,7 @@ export function EventDetails({
               aria-describedby={
                 validationErrors?.flyer ? "flyer-error" : undefined
               }
+              aria-label={t.labels.flyer}
             />
             {validationErrors?.flyer && (
               <p id="flyer-error" className="sr-only">
@@ -121,7 +137,9 @@ export function EventDetails({
             )}
           </label>
 
-          <p>{fileName || t.labels.filename}</p>
+          <p aria-live="polite" aria-atomic="true">
+            {fileName || t.labels.filename}
+          </p>
         </div>
       </fieldset>
       {/* .form-group */}
