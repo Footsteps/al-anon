@@ -27,6 +27,11 @@ export default function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const main = document.getElementById("main-content");
+    main?.focus();
+  }, [pathname])
+
   return (
     <div className={`app-container ${pathname.slice(1) || "home"}`}>
       <a href="#main-content" className="skip-link">

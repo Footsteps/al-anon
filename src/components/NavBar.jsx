@@ -44,7 +44,7 @@ export default function NavBar({ language, setLanguage, isMobile}) {
         aria-label={t.contact}
       >
         {isMobile ? (
-          <img className="icon" src={ContactIcon} alt="" aria-hidden="true"/>
+          <img className="icon" src={ContactIcon} alt="" aria-hidden="true" aria-label={t.contact}/>
         ) : (
           `${t.contact}`
         )}

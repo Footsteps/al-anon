@@ -5,6 +5,7 @@ export const text = {
       contact: "Kontakt",
     },
     languageSwitcher: {
+      divLabel: "Sprache",
       tooltip: "Switch language: english",
       switch: {
         desktop: "Switch Language",
@@ -133,6 +134,7 @@ export const text = {
       contact: "Contact",
     },
     languageSwitcher: {
+      divLabel: "Language",
       tooltip: "Sprache wechseln: deutsch",
       switch: {
         desktop: "Sprache wechseln",

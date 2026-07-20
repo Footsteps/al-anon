@@ -2,7 +2,7 @@ import { meetings as m } from "../data/meetings.js";
 import { Fragment } from "react";
 export default function Meetings({ language }) {
   return (
-    <main className="main-meetings" id="main-content">
+    <main className="main-meetings" id="main-content" tabIndex={-1}>
       <section id="meetings" className="section-card info-card">
         <h2>{m.info[language].heading}</h2>
         <p>{m.info[language].text}</p>

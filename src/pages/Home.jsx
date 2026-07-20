@@ -4,7 +4,7 @@ export default function Home({ language, isMobile }) {
   const t = text[language].home;
 
   return (
-    <main id="main-content">
+    <main id="main-content" tabIndex={-1}>
       <h1>{t.title[isMobile ? "isMobile" : "isDesktop"]}</h1>
       <div className="home-container">
         <section className=" section-card welcome">

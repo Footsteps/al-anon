@@ -5,7 +5,7 @@ function LanguageSwitcher({ language, setLanguage, isMobile}) {
 const t = text[language].languageSwitcher;
 
   return (
-    <div>
+    <div role="group" aria-label={t.divLabel}>
     <Tooltip text={t.tooltip}>
           <button
             type="button"
