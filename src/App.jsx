@@ -29,9 +29,11 @@ export default function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  /*
   useEffect(() => {
     document.getElementById("main-content")?.focus();
   }, [pathname]);
+*/
 
   useEffect(() => {
   document.documentElement.lang = language;
