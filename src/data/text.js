@@ -24,7 +24,7 @@ export const text = {
 
       welcome: {
         heading: "Willkommen!",
-        text: "Diese Seite ist privat - sie ist KEINE offizielle Website von Al-Anon. Sie sammelt Infos über Conventions. Meldet Euch gern, wenn ihr was habt! Außerdem kann die offizielle Al-Anon Seite al-anon.de (noch) kein Englisch, und hier springt diese Seite mit einem Überblick über alle englischsprachigen Al-Anon Meetings in Berlin ein.",
+        text: "Diese Seite ist privat - sie ist KEINE offizielle Website von Al-Anon. Sie sammelt Infos über die englischsprachigen Al-Anon Meetings in Berlin und über Conventions. Meldet Euch gern, wenn ihr Convention-Tipps habt! Außerdem kann die offizielle Al-Anon Seite al-anon.de (noch) kein Englisch, und hier springt diese Seite mit einem Überblick über alle englischsprachigen Al-Anon Meetings in Berlin ein.",
       },
 
       newcomer: {
@@ -153,7 +153,7 @@ export const text = {
 
       welcome: {
         heading: "Welcome!",
-        text: "This is a personal page - NOT an official website of Al-Anon. It collects information about conventions. Please feel free to contact me if you have any! Also, the official German Al-Anon website isn't available in English (yet), so this site fills that gap and gives an overview of all the English speaking Al-Anon meetings in Berlin.",
+        text: "This is a personal page - NOT an official website of Al-Anon. It collects information about the english speaking Al-Anon meetings in Berlin & about conventions. Please feel free to contact me if you have any convention tipps! Also, the official German Al-Anon website isn't available in English (yet), so this site fills that gap and gives an overview of all the English speaking Al-Anon meetings in Berlin.",
       },
 
       newcomer: {
