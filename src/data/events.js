@@ -33,21 +33,6 @@ export const events = [
     "id": "2026-07",
     "month": {"de": "Juli 2026", "en": "July 2026"},
     "events": [
-      {
-        "id": 1,
-        "title": "The 35th Intergroup Bavarian Roundup",
-        "startDate": "2026-07-11",
-        "endDate": "2026-07-13",
-        "organizer": "AA",
-        "languages": {"de": "englisch", "en": "english"},
-        "city": "82491 Grainau",
-        "country": {"de": "Deutschland", "en":"Germany"},
-        "address": "Alpspitzstr. 6",
-        "location": "Seminarhaus Grainau e.V.",
-        "website": "https://alcoholics-anonymous.eu/event/the-35th-intergroup-bavarian-roundup/",
-        "email": null,
-        "flyer": {"de": "/flyer/35th Annual AA Bavarian Roundup-Final-mku-02.pdf"}
-      }
     ]
   },
   {
