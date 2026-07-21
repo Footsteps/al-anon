@@ -2,22 +2,24 @@ Event Website
 
 A responsive React application for sharing information about dance events and allowing users to submit new events or contact the organizers.
 
-Features
+FEATURES
 Responsive design
 Accessible navigation and forms
 Multilingual interface
 Event submission form
 Optional flyer upload (PDF or image)
 Express backend (in development)
-Tech Stack
-Frontend
+
+TECH STACK
+Frontend:
 React
 React Router
 Vite
-Backend
+Backend:
 Node.js
 Express
-Project Structure
+
+PROJECT STRUCTURE
 project/
 │
 ├── src/                # React frontend
