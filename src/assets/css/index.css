@@ -196,10 +196,15 @@ footer {
 
 section p,
 address {
+  
   font-size: 1.3rem;
   line-height: 1.5;
   font-weight: 600;
   text-align: justify;
+}
+
+adress {
+border: 5px solid purple;
 }
 
 /**GLASS CARD**/
@@ -259,10 +264,12 @@ h2 {
 
 .h-white-background {
   background-color: var(--text-background-color);
-  padding: 3.5px;
+  padding: 1rem 2rem;
   font-weight: 1000;
   letter-spacing: 1.5px;
 }
+
+
 
 /**EVENTS **/
 
@@ -283,6 +290,10 @@ article.event-card h3 {
   font-weight: 800;
   font-size: 1.5rem;
   text-align: center;
+}
+
+article.event-card p {
+  text-align: left;
 }
 
 .flyer-preview > a {
