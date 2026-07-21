@@ -53,7 +53,7 @@ export default function App() {
           element={<Home language={language} isMobile={isMobile} />}
         />
         <Route path="/meetings" element={<Meetings language={language} />} />
-        <Route path="/roundups" element={<Events language={language} />} />
+        <Route path="/events" element={<Events language={language} />} />
         <Route path="/contact" element={<Contact language={language} />} />
         <Route path="/impressum" element={<Impressum language={language} />} />
         <Route path="/privacy" element={<Privacy language={language} />} />

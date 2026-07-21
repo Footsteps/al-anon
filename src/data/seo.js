@@ -17,7 +17,7 @@ export const seo = {
     events: {
         title: "Roundups | English Speaking Al-Anon Berlin & European Conventions",
         description: "Upcoming English-speaking Al-Anon roundups or events with Al-Anon participation",
-        url: `${BASE_URL}/roundups`,
+        url: `${BASE_URL}/events`,
         image: IMAGE
     },
     contact: {
