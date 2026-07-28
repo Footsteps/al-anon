@@ -12,8 +12,6 @@ export function useContactForm(language) {
       async function handleSubmit(e) {
         
         e.preventDefault();
-
-        setIsSubmitting(true);
     
         const form = e.currentTarget;
         const formData = new FormData(form);
@@ -23,10 +21,14 @@ export function useContactForm(language) {
     
         if(Object.keys(errors).length > 0) {
           setValidationErrors(errors);
+          setSubmitCount(count => count + 1);
           return;
         }
         /*frontend validation done*/
 
+
+        setIsSubmitting(true);
+        
         try {
           const result = await contactService(formData, language);
     
