@@ -20,6 +20,7 @@ export default function EventSubmissionForm({ language }) {
     submitted,
     submitCount,
     validationErrors,
+    summaryErrors,
     fileName,
     setFileName,
     handleSubmit,
@@ -58,7 +59,7 @@ export default function EventSubmissionForm({ language }) {
 
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data" aria-busy={isSubmitting}>
-      <ValidationErrors ref={errorSummaryRef} errors={validationErrors} messages={e} submitCount={submitCount}/>
+      <ValidationErrors ref={errorSummaryRef} errors={summaryErrors} messages={e} submitCount={submitCount}/>
 
       <p className="section-card info-card">{t.text}</p>
 

@@ -6,6 +6,7 @@ export function useContactForm(language) {
     const [submitted, setSubmitted] = useState(false);
     const [submitCount, setSubmitCount] = useState(0);
     const [validationErrors, setValidationErrors] = useState({});
+    const [summaryErrors, setSummaryErrors] = useState({});
     const [fileName, setFileName] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -21,6 +22,7 @@ export function useContactForm(language) {
     
         if(Object.keys(errors).length > 0) {
           setValidationErrors(errors);
+          setSummaryErrors(errors);
           setSubmitCount(count => count + 1);
           return;
         }
@@ -34,10 +36,12 @@ export function useContactForm(language) {
     
           if (!result.success) {
             setValidationErrors(result.errors);
+            setSummaryErrors(errors);
             setSubmitCount(count => count + 1);
             return;
           }
           setValidationErrors({});
+          setSummaryErrors({});
           setSubmitted(true);
           setFileName("");
           form.reset();
@@ -64,6 +68,7 @@ export function useContactForm(language) {
         submitted, 
         submitCount,
         validationErrors,
+        summaryErrors,
         fileName,
         setFileName, 
         handleSubmit,
