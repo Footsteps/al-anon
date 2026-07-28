@@ -13,6 +13,7 @@ export const ValidationErrors = forwardRef(function ValidationErrors(
   const FIELD_IDS = {
     message_required: "message",
     title_required: "title",
+    website_invalid: "website",
     eventContactInformation_required: "contact-information",
     consent_required: "consent",
   };

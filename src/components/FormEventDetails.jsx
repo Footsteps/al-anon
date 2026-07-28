@@ -103,7 +103,24 @@ export function EventDetails({
 
         {/* WEBSITE */}
         <label htmlFor="website">{t.labels.website}</label>
-        <input type="url" name="website" id="website" autoComplete="url" />
+        <input
+          type="url"
+          name="website"
+          id="website"
+          autoComplete="url"
+          className={validationErrors?.website ? "input-error" : ""}
+          onChange={() => clearFieldError("website")}
+          aria-invalid={Boolean(validationErrors?.website)}
+          aria-describedby={
+            validationErrors?.website ? "website-error" : undefined
+          }
+        />
+
+        {validationErrors?.website && (
+          <p id="website-error" className="sr-only">
+            {e[validationErrors.website]}
+          </p>
+        )}
 
         {/* FLYER */}
         <div className="flyer">

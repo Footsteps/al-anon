@@ -6,6 +6,7 @@ export const errorMessages = {
     title_required: "Bitte gib einen Veranstaltungstitel an.",
     eventContactInformation_required:
       "Bitte gib eine Event-E-Mail oder eine Website oder einen Flyer an.",
+    website_invalid: "Bitte gib eine url an, die mit https:// beginnt.",  
     mail_failed: "Das hat leider nicht geklappt - tut mir leid. Bitte versuche es später noch einmal.",
     file_too_large: "Die Datei darf maximal 5MB groß sein.",
     invalid_file_type: "Bitte lade eine PDF-, JPG-, PNG- oder WEBP-Datei hoch."
@@ -15,6 +16,7 @@ export const errorMessages = {
     message_required: "Please leave a message.",
     consent_required: "Please agree to the privacy policy.",
     title_required: "Please provide an event title.",
+    website_invalid: "Please provide an url starting with https://",
     eventContactInformation_required:
       "Please provide an event email address, or a website, or a flyer.",
     mail_failed: "Unfortunately, that didn't work out—I'm sorry. Please try again later.",
