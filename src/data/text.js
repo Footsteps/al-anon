@@ -38,7 +38,7 @@ export const text = {
       },
 
       events: {
-        heading: "Conventions",
+        heading: "Roundups",
         text: "Eine Sammlung von Conventions innerhalb und außerhalb Deutschlands. Sie erhebt keinen Anspruch auf Vollständigkeit und freut sich sehr über Zuwachs (dafür gern das Kontaktformular nutzen).",
       },
       link: {
@@ -167,7 +167,7 @@ export const text = {
       },
 
       events: {
-        heading: "Conventions",
+        heading: "Roundups",
         text: "A collection of conventions in and outside of Germany. It is by no means exhaustive—and I'd love to hear about any additions (please use the contact form for this).",
       },
       link: {
