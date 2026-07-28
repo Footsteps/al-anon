@@ -4,6 +4,10 @@ form {
   padding: 2rem;
 }
 
+form p.info-card {
+  font-size: 1.2rem;
+}
+
 .form-group {
   display: grid;
   gap: 1rem;
@@ -29,10 +33,6 @@ fieldset {
 
 form > h2.section-card {
   margin: 0 2rem 1rem 2rem;
-}
-
-form > h2 {
-  font-size: 1.5rem;
 }
 
 .submit-section {
@@ -269,6 +269,10 @@ fieldset.form-group-error {
   .file-btn {
     font-size: 1.5rem;
   }
+
+  form p.info-card {
+  font-size: 1.5rem;
+}
 }
 
 @media (min-width: 769px) {
@@ -277,6 +281,10 @@ fieldset.form-group-error {
   .error-message {
     font-size: 1.5rem;
   }
+
+   form p.info-card {
+  font-size: 1.7rem;
+}
 
   label,
   select,
@@ -303,6 +311,10 @@ fieldset.form-group-error {
   form {
     margin: 0 auto 2rem;
   }
+
+    form p.info-card {
+  font-size: 2rem;
+}
 
   form > .info-card,
   textarea::placeholder,
