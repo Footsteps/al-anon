@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { contactService } from "../services/contactService.js";
+import { formValidation } from "../validators/formValidation.js";
 
 export function useContactForm(language) {
     const [submitted, setSubmitted] = useState(false);
@@ -16,7 +17,16 @@ export function useContactForm(language) {
     
         const form = e.currentTarget;
         const formData = new FormData(form);
+
+        /*front end validation*/
+        const errors = formValidation(formData);
     
+        if(Object.keys(errors).length > 0) {
+          setValidationErrors(errors);
+          return;
+        }
+        /*frontend validation done*/
+
         try {
           const result = await contactService(formData, language);
     
