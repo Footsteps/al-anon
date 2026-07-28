@@ -1,7 +1,6 @@
 import { useEffect} from "react";
 
 export function useFocusErrorMessage(validationErrors, errorSummaryRef, submitCount) {
-console.log(submitCount);
     useEffect(() => {
     
 
