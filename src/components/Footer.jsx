@@ -9,6 +9,7 @@ export default function Footer({ language }) {
   const t = text[language].footer;
   return (
     <footer>
+      <div className="footer-links">
       <NavLink
         className={({ isActive }) =>
           `footer-font ${isActive ? "active border" : ""}`
@@ -26,10 +27,13 @@ export default function Footer({ language }) {
       >
         {t.privacy}
       </NavLink>
+      </div>
+      <div className="footer-credit">
 
       {credit && (
         <ImageCredit language={language} credit={credit}/>
       )}
+      </div>
     </footer>
   );
 }

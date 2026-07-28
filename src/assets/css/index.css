@@ -154,8 +154,7 @@ header {
   border-bottom: 1px solid var(--primary-color);
 }
 
-nav,
-footer {
+nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -303,13 +302,8 @@ article.event-card p {
 footer {
   padding: 1.5rem;
   margin-top: auto;
-
   border-top: 1px solid var(--primary-color);
   background-color: var(--text-background-color);
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .footer-font {
@@ -322,6 +316,12 @@ footer a {
 
 footer a:hover {
   transform: translate3d(0, 2px, 0);
+}
+
+footer .footer-links, .footer-credit {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 /*LEGAL PAGE*/
@@ -361,6 +361,16 @@ address {
   .footer-font {
     font-size: 1.2rem;
   }
+
+  footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-links {
+  gap: 3rem;
+}
 
   /*LEGAL PAGE*/
   .legal-page {
