@@ -57,7 +57,7 @@ export const text = {
         language: "Sprache",
         email: "E-Mail",
         website: "Webseite",
-        flyer: "Flyer (PDF öffnen)",
+        flyer: "Flyer (PDF oder Bild öffnen)",
       } /*labels*/,
     } /*events*/,
     contact: {
@@ -186,7 +186,7 @@ export const text = {
         language: "Language",
         email: "Email",
         website: "Website",
-        flyer: "Flyer (open PDF)",
+        flyer: "Flyer (open PDF or image)",
       },
     } /*events*/,
     contact: {

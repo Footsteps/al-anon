@@ -73,11 +73,12 @@ export default function EventCard({event, language}) {
                             rel="noopener noreferrer"
                           >{textLabels.flyer}</a>
                         ) : (
-                          <img
-                            src={flyerUrl}
+                          <a
+                            href={flyerUrl}
+                            target="_blank"
                             alt={`Flyer ${event.title}`}
-                            width={200}
-                          />
+                           rel="noopener noreferrer"
+                          >{textLabels.flyer}</a>
                         )}
                       </div>
                     )}

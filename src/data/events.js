@@ -119,5 +119,56 @@ export const events = [
     "id": "2026-12",
     "month": {"de": "Dezember 2026", "en": "December 2026"},
     "events": []
-  }
+  },
+  /*2027*/
+  {
+    "id": "2027-01",
+    "month": {"de": "Januar 2027", "en": "January 2027"},
+    "events": []
+  },
+  {
+    "id": "2027-02",
+    "month": {"de": "Februar 2027", "en": "February 2027"},
+    "events": [{
+        "id": 5,
+        "title": "38th Annual A.A. North Sea Convention",
+        "startDate": "2027-02-05",
+        "endDate": "2027-02-07",
+        "organizer": "AA",
+        "languages": {"de":"englisch", "en":"english"},
+        "city": "8400 Oostende",
+        "country": {"de": "Belgien", "en":"Belgium"},
+        "address": "Zeedijk 290-330",
+        "location": "Vayamundo Oostende",
+        "website": "https://www.northseaconvention.com/",
+        "email": "",
+        "flyer": {"de": "/flyer/NSC-2027-Flyer.jpeg"}
+        }]
+  },
+  {
+    "id": "2027-03",
+    "month": {"de": "März 2027", "en": "March 2027"},
+    "events": []
+  },
+  {
+    "id": "2027-04",
+    "month": {"de": "April 2027", "en": "April 2027"},
+    "events": []
+  },
+  {
+    "id": "2027-05",
+    "month": {"de": "Mai 2027", "en": "May 2027"},
+    "events": []
+  },
+  {
+    "id": "2027-06",
+    "month": {"de": "Juni 2027", "en": "June 2027"},
+    "events": []
+  },
+  {
+    "id": "2026-07",
+    "month": {"de": "Juli 2027", "en": "July 2027"},
+    "events": [
+    ]
+  },
 ]
