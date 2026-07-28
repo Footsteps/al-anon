@@ -216,6 +216,7 @@ border: 5px solid purple;
   border-radius: 1.5rem;
   background-color: var(--text-background-color);
   font-weight: bolder;
+  margin: 1rem;
 }
 
 .card-glass {
@@ -269,8 +270,6 @@ h2 {
   letter-spacing: 1.5px;
 }
 
-
-
 /**EVENTS **/
 
 .events-main > section {
@@ -314,7 +313,7 @@ footer {
 }
 
 .footer-font {
-  font-size: 0.9rem;
+  font-size: 1.3rem;
 }
 
 footer a {
