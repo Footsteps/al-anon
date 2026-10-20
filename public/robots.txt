@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://english-al-anon-berlin.org/sitemap.xml
+Sitemap: https://al-anon-app.vercel.app/sitemap.xml

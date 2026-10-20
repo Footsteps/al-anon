@@ -3,27 +3,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://english-al-anon-berlin.org/</loc>
+    <loc>https://al-anon-app.vercel.app/</loc>
   </url>
 
   <url>
-    <loc>https://english-al-anon-berlin.org/meetings</loc>
+    <loc>https://al-anon-app.vercel.app/meetings</loc>
   </url>
 
   <url>
-    <loc>https://english-al-anon-berlin.org/events</loc>
+    <loc>https://al-anon-app.vercel.app/events</loc>
   </url>
 
   <url>
-    <loc>https://english-al-anon-berlin.org/contact</loc>
+    <loc>https://al-anon-app.vercel.app/contact</loc>
   </url>
 
   <url>
-    <loc>https://english-al-anon-berlin.org/privacy</loc>
+    <loc>https://al-anon-app.vercel.app/privacy</loc>
   </url>
 
   <url>
-    <loc>https://english-al-anon-berlin.org/impressum</loc>
+    <loc>https://al-anon-app.vercel.app/impressum</loc>
   </url>
 
 </urlset>
