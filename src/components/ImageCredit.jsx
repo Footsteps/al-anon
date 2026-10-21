@@ -1,28 +1,28 @@
 import {text} from "../data/text.js";
 
-export default function ImageCredit({language, credit}) {
-    const t = text[language].footer
+export default function ImageCredit({language}) {
+    const t = text[language].footer.credit
     
     
     return (
         <p className="footer-font">
-          {t.credit[0]}{" "}
+          {t.text1}{" "}
           <a
             className="footer-font"
-            href={credit.authorUrl}
+            href={t.authorUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {credit.author}
+            {t.author}
           </a>{" "}
-          {t.credit[1]}{" "}
+          {t.text2}{" "}
           <a
             className="footer-font"
-            href={credit.imageUrl}
+            href={t.imageUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Pixabay
+            Unsplash
           </a>
         </p>
     )

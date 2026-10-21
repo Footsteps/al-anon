@@ -1,11 +1,8 @@
-import { NavLink, useLocation } from "react-router-dom";
-import { imageCredits } from "../data/imageCredits.js";
+import { NavLink} from "react-router-dom";
 import {text} from "../data/text.js";
 import ImageCredit from "./ImageCredit.jsx";
 
 export default function Footer({ language }) {
-  const location = useLocation();
-  const credit = imageCredits[location.pathname];
   const t = text[language].footer;
   return (
     <footer>
@@ -29,10 +26,7 @@ export default function Footer({ language }) {
       </NavLink>
       </div>
       <div className="footer-credit">
-
-      {credit && (
-        <ImageCredit language={language} credit={credit}/>
-      )}
+        <ImageCredit language={language}/>
       </div>
     </footer>
   );

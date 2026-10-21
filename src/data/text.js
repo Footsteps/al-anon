@@ -92,7 +92,13 @@ export const text = {
     footer: {
       impressum: "Impressum",
       privacy: "Datenschutz",
-      credit: ["Hintergrundbild von","auf"]
+      credit: {
+        text1: "Hintergrundbild von",
+        text2: "auf",
+        author: "Shahrukh Shoaib",
+        authorUrl: "https://unsplash.com/de/@ciarockx/grafiken?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        imageUrl: "https://unsplash.com/de/grafiken?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      }
     }, /*footer*/
     impressum: [
       {heading: "Angaben gemäß § 5 DDG",
@@ -220,7 +226,13 @@ export const text = {
     footer: {
       impressum: "Legal Notice",
       privacy: "Privacy Policy",
-      credit: ["Background image by", "at"]
+      credit: {
+        text1: "Background image by", 
+        text2: "at",
+        author: "Shahrukh Shoaib",
+        authorUrl: "https://unsplash.com/de/@ciarockx/grafiken?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
+        imageUrl: "https://unsplash.com/de/grafiken?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      }
     }, /*footer*/
     impressum: [
       {heading: "Information pursuant to Section 5 of the DDG",

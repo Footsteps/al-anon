@@ -81,27 +81,15 @@ main {
 
   z-index: -1;
 }
-.app-container.home::before,
-.app-container.impressum::before,
-.app-container.privacy::before {
-  background-image: url("../images/background.webp");
-  opacity: 0.5;
+.app-container::before {  
+  background-image: url("src/assets/images/shahrukh-shoaib-JfLzCcBjCrM-unsplash.jpg");
 }
 
-.app-container.meetings::before {
-  background-image: url("../images/background-meetings.webp");
-  opacity: 0.6;
-}
 
-.app-container.events::before {
-  background-image: url("../images/Eibsee.webp");
-  opacity: 0.6;
-}
 
-.app-container.contact::before {
-  background-image: url("../images/Blumenwiese2.webp");
-  opacity: 0.5;
-}
+
+
+
 
 /**BORDER **/
 .border {
