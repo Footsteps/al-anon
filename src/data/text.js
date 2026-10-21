@@ -146,9 +146,9 @@ export const text = {
     home: {
       title: {
         mobile:
-          "Al-Anon: English speaking meetings in Berlin & European conventions",
+          "Al-Anon: English-Speaking meetings in Berlin & European conventions",
         desktop:
-          "Al-Anon: English speaking meetings in Berlin & Conventions in Europe",
+          "Al-Anon: English-Speaking meetings in Berlin & Conventions in Europe",
       },
 
       welcome: {

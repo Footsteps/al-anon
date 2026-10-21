@@ -4,12 +4,14 @@ import {seo} from "../data/seo.js"
 
 export default function Home({ language, isMobile }) {
   const t = text[language].home;
+  console.log(isMobile);
+  console.log(t.title.isMobile);
 
   return (
     <>
     <SEO {...seo.home}/>
     <main id="main-content" tabIndex={-1}>
-      <h1>{t.title[isMobile ? "isMobile" : "isDesktop"]}</h1>
+      <h1>{isMobile ? t.title.mobile : t.title.desktop}</h1>
       <div className="home-container">
         <section className=" section-card welcome">
           <h2>
